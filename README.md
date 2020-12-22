@@ -1,2 +1,2 @@
 # hackathon-dashboard
-EY hackathon dashboard
+ hackathon dashboard
