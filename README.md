@@ -1,2 +1,2 @@
-# EY-dashboard
+# hackathon-dashboard
 EY hackathon dashboard
