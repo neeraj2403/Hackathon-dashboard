@@ -3,14 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="static/style.css"> -->
     
     <title>Document</title>
 </head>
 <body>
- 
+  <canvas id="myChart" width="400" height="400px"></canvas>
+  <script>
+    $(document).ready(function()
+      {
+        var url = "https://api.covid19india.org/data.json"
+        $.getJSON(url,function(data)
+        {
+          console.log(data);
+          var state = []
+          var confirmed = []
+          var recovered = []
+          var death = []
+          var date = []
+          var total_confirmed = []
+          var total_deceased = []
+          var total_recovered = []
+          $.each(data.statewise,function(id,obj)
+          {
+            state.push(obj.state)
+            confirmed.push(obj.confirmed)
+            recovered.push(obj.recovered)
+            death.push(obj.death)
+            
+          })
+          $.each(data.cases_time_series,function(id,obj)
+          {
+            date.push(obj.date)
+            total_confirmed.push(obj.totalconfirmed)
+            total_recovered.push(obj.totalrecovered)
+            total_deceased.push(obj.totaldeceased)
+            
+          })
+         
+          state.shift()
+          confirmed.shift()
+          recovered.shift()
+          death.shift()
+          console.log(state);
+          var chart = document.getElementById("myChart").getContext("2d");
+          var chart = new Chart(myChart,{
+            type : "line",
+            data : {
+              labels : date,
+              datasets : [
+                {
+                  label : "Confirmed Cases",
+                  data : total_confirmed,
+                  backgroundColor : "#ff0000",
+                  minBarLength : 100,
+                  borderWidth : 0.5,
+                  
+                  fill : false
+                },
+                {
+                  label : "Recovered Cases",
+                  data : total_recovered,
+                  backgroundColor : "#009900",
+                  minBarLength : 100,
+                  fill : false
+                },
+                {
+                  label : "Deceased",
+                  data : total_deceased,
+                  backgroundColor : "#000000",
+                  minBarLength : 100,
+                  fill : false
+                }
+              ]
+            },
+            options : {
+              responsive : false
+            }
+          })
+          
+        })
+      }
+    )
 
-  <div class="split left">
+  </script>
+  
+
+  <!-- <div class="split left">
     <div class="centered-table">
       <table class="content-table">
         <thead>
@@ -101,12 +182,12 @@
       </table>
       
     </div>
-  </div>
+  </div> -->
   <!-- ---------------------------------------------------card----------------------------------------------------------- -->
-  <div class="split right">
-    <div class="centered">
+  <!-- <div class="split right">
+    <div class="centered"> -->
       <!-- cop code here -->
-      <div class="container">
+      <!-- <div class="container">
         <div class="card">
             <div class="content">
                 <h2>Asky 1</h2>
@@ -153,7 +234,7 @@
 
 
   <!-- ----------------------------------------card ends -------------------------->
-   <script type="text/javascript" src="static/vanilla-tilt.js"></script> 
-   <script type="text/javascript" src="static/app.js"></script>
+   <!-- <script type="text/javascript" src="static/vanilla-tilt.js"></script> 
+   <script type="text/javascript" src="static/app.js"></script> --> -->
 </body>
 </html>

@@ -5,12 +5,12 @@ import json
 
 app= Flask(__name__)
 
-@app.route("/data")
-def data():
+# @app.route("/data")
+# def data():
 
-    df=pd.read_csv('https://api.covid19india.org/csv/latest/case_time_series.csv')
-    json_data = df.to_json() 
-    return json_data
+#     df=pd.read_csv('https://api.covid19india.org/data.json')
+#     json_data = df.to_json() 
+#     return json_data
 
 
 @app.route("/")
