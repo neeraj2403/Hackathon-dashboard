@@ -3,14 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <link rel="stylesheet" href="static/style.css"> -->
+    <link rel="stylesheet" href="static/style.css">
     
     <title>Document</title>
 </head>
 <body>
-  <canvas id="myChart" width="400" height="400px"></canvas>
+  
+  
+  
+  
+  <main>
+    <div class="main__container">
+        <div class="main__title">
+            <div class="main__greeting">
+                <h1>Covid 19 Dashboard</h1>
+            
+            </div>
+        </div>
+        <div class="table">
+            <div class="table__left">
+                <table class="container">
+                    <thead>
+                        <tr>
+                            <th><h1>Sites</h1></th>
+                            <th><h1>Views</h1></th>
+                            <th><h1>Clicks</h1></th>
+                            <th><h1>Average</h1></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Google</td>
+                            <td>9518</td>
+                            <td>6369</td>
+                            <td>01:32:50</td>
+                        </tr>
+                        <tr>
+                            <td>Google</td>
+                            <td>9518</td>
+                            <td>6369</td>
+                            <td>01:32:50</td>
+                        </tr>
+                        <tr>
+                            <td>Google</td>
+                            <td>9518</td>
+                            <td>6369</td>
+                            <td>01:32:50</td>
+                        </tr>
+                        <tr>
+                            <td>Google</td>
+                            <td>9518</td>
+                            <td>6369</td>
+                            <td>01:32:50</td>
+                        </tr>
+                        <tr>
+                            <td>Google</td>
+                            <td>9518</td>
+                            <td>6369</td>
+                            <td>01:32:50</td>
+                        </tr>
+                        <tr>
+                            <td>Google</td>
+                            <td>9518</td>
+                            <td>6369</td>
+                            <td>01:32:50</td>
+                        </tr>
+                        <tr>
+                            <td>Google</td>
+                            <td>9518</td>
+                            <td>6369</td>
+                            <td>01:32:50</td>
+                        </tr>
+                        <tr>
+                            <td>Google</td>
+                            <td>9518</td>
+                            <td>6369</td>
+                            <td>01:32:50</td>
+                        </tr>
+                        <tr>
+                            <td>Google</td>
+                            <td>9518</td>
+                            <td>6369</td>
+                            <td>01:32:50</td>
+                        </tr>
+                        <tr>
+                            <td>Twitter</td>
+                            <td>7326</td>
+                            <td>10437</td>
+                            <td>00:51:22</td>
+                        </tr>
+                        <tr>
+                            <td>Amazon</td>
+                            <td>4162</td>
+                            <td>5327</td>
+                            <td>00:24:34</td>
+                        </tr>
+                    <tr>
+                            <td>LinkedIn</td>
+                            <td>3654</td>
+                            <td>2961</td>
+                            <td>00:12:10</td>
+                        </tr>
+                    <tr>
+                            <td>CodePen</td>
+                            <td>2002</td>
+                            <td>4135</td>
+                            <td>00:46:19</td>
+                        </tr>
+                    <tr>
+                            <td>GitHub</td>
+                            <td>4623</td>
+                            <td>3486</td>
+                            <td>00:31:52</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+            <div class="table__right">
+                <div class="table__right__title">
+                    <div>
+                        <h1>
+                            Stats
+                        </h1>
+                    </div>
+                </div>
+
+            <div class="table__right__cards">
+                <div class="card1">
+                    <h1>Active</h1>
+                    <p>23,000</p>
+                </div>
+                <div class="card2">
+                    <h1>Confirmed</h1>
+                    <p>23,000</p>
+                </div>
+                <div class="card3">
+                    <h1>Recovered</h1>
+                    <p>23,000</p>
+                </div>
+                <div class="card4">
+                    <h1>Deceased</h1>
+                    <p>23,000</p>
+                </div>
+            </div>
+<canvas id="myChart" width="400" height="400px"></canvas>
+
+            </div>
+        </div>
+    </div>
+</main>
+  
+  
+  
   <script>
     $(document).ready(function()
       {
@@ -60,6 +209,7 @@
                   backgroundColor : "#ff0000",
                   minBarLength : 100,
                   borderWidth : 0.5,
+                  pointRadius:1,
                   
                   fill : false
                 },
@@ -68,19 +218,24 @@
                   data : total_recovered,
                   backgroundColor : "#009900",
                   minBarLength : 100,
-                  fill : false
+                  fill : false,
+                  borderWidth : 0.5,
+                  pointRadius:1,
                 },
                 {
                   label : "Deceased",
                   data : total_deceased,
                   backgroundColor : "#000000",
                   minBarLength : 100,
-                  fill : false
+                  fill : false,
+                  borderWidth : 0.5,
+                  pointRadius:1,
                 }
               ]
             },
             options : {
               responsive : false
+
             }
           })
           
