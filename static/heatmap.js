@@ -31,11 +31,11 @@ polygonSeries.data = [
   },
   {
     id: "IN-MH",
-    value: 6269321325
+    value: 2*120000
   },
   {
     id: "IN-UP",
-    value: 5467879678
+    value: 120000
   },
   {
     id: "US-AR",
@@ -47,7 +47,7 @@ polygonSeries.data = [
   },
   {
     id: "IN-AP",
-    value: 0
+    value: 120000
   },
   {
     id: "IN-MP",
@@ -55,7 +55,7 @@ polygonSeries.data = [
   },
   {
     id: "IN-TN",
-    value: 0
+    value: 120000
   },
   {
     id: "IN-JH",
@@ -63,7 +63,7 @@ polygonSeries.data = [
   },
   {
     id: "IN-WB",
-    value: 0
+    value: 120000
   },
   {
     id: "IN-GJ",
@@ -119,11 +119,11 @@ polygonSeries.data = [
   },
   {
     id: "IN-KL",
-    value: 0
+    value: 120000
   },
   {
     id: "IN-OR",
-    value: 0
+    value: 120000
   },
   {
     id: "IN-SK",

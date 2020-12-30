@@ -3,7 +3,7 @@ $(document).ready(function()
         var url = "https://api.covid19india.org/data.json"
         $.getJSON(url,function(data)
         {
-          console.log(data);
+          
           var state = []
           var confirmed = []
           var recovered = []
@@ -38,6 +38,9 @@ $(document).ready(function()
 
 
 
+         
+
+
           $.each(data.statewise,function(id,obj)
           {
             state.push(obj.state)
@@ -59,12 +62,14 @@ $(document).ready(function()
           confirmed.shift()
           recovered.shift()
           death.shift()
-          console.log(state);
+          // console.log(state);
           var chart = document.getElementById("myChart").getContext("2d");
           var chart = new Chart(myChart,{
             type : "line",
+
             data : {
-              labels : date,
+            labels : date,
+              
               datasets : [
                 {
                   label : "Confirmed Cases",
@@ -97,7 +102,15 @@ $(document).ready(function()
               ]
             },
             options : {
-              responsive : false
+              responsive : false,
+              // scales:{
+              //   x:{
+                  
+                
+              //     // min : '22 November',
+              //     // max : '22 November'
+              //   }
+              // }
 
             }
           })
