@@ -1,22 +1,18 @@
-from flask import Flask, render_template ,jsonify
+from flask import Flask, render_template
 import requests
-import pandas as pd
 import json
 
 app= Flask(__name__)
 
-# @app.route("/data")
-# def data():
-
-#     df=pd.read_csv('https://api.covid19india.org/data.json')
-#     json_data = df.to_json() 
-#     return json_data
-
-
 @app.route("/")
 def index():
     return render_template("index.html")
+
+@app.route("/data")
+def data():
+    with open('./Datasets/active_vulnerability_index') as f:
+        data = json.load(f)
+    return data
+
 if __name__=='__main__':
     app.run(debug=True)
-    
-
