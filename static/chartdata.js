@@ -38,7 +38,12 @@ $(document).ready(function()
 
 
 
-         
+         function filterbydate(item){
+           if(moment().subtract(30,'days').calender()){
+             return true
+           }
+           
+         }
 
 
           $.each(data.statewise,function(id,obj)

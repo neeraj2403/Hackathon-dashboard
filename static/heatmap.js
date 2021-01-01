@@ -3,17 +3,19 @@
 // custom js
 
 
-// $(document).ready(function()
-//       {
-//         var url = "http://127.0.0.1:5000/data" //error here
-//         $.getJSON(url,function(data)
-//         {
+$(document).ready(function()
+      {
+        var url = "http://127.0.0.1:5000/data" //error here
+        $.getJSON(url,function(data)
+        {
+
+          
 
 
-//           $.each(data.index,function(id,obj)
-//           {
-//             console.log(obj)
-//           })
+          // $.each(data.index,function(id,obj)
+          // {
+          //   console.log(id.Maharashtra)
+          // })
 
 
 
@@ -43,147 +45,147 @@
           polygonSeries.data = [
             {
               id: "IN-JK",
-              value: 0
+              value: data["index"]["Jammu and Kashmir"]
             },
             {
               id: "IN-MH",
-              value: 2*120000
+              value: data["index"]["Maharashtra"]
             },
             {
               id: "IN-UP",
-              value: 120000
+              value: data["index"]["Uttar Pradesh"]
             },
             {
               id: "US-AR",
-              value: 0
+              value: data["index"]["Arunachal Pradesh"]
             },
             {
               id: "IN-RJ",
-              value: 0
+              value: data["index"]["Rajasthan"]
             },
             {
               id: "IN-AP",
-              value: 120000
+              value: data["index"]["Andhra Pradesh"]
             },
             {
               id: "IN-MP",
-              value: 0
+              value: data["index"]["Madhya Pradesh"]
             },
             {
               id: "IN-TN",
-              value: 120000
+              value: data["index"]["Tamil Nadu"]
             },
             {
               id: "IN-JH",
-              value: 0
+              value: data["index"]["Jharkhand"]
             },
             {
               id: "IN-WB",
-              value: 120000
+              value: data["index"]["West Bengal"]
             },
             {
               id: "IN-GJ",
-              value: 0
+              value: data["index"]["Gujarat"]
             },
             {
               id: "IN-BR",
-              value: 0
+              value: data["index"]["Bihar"]
             },
             {
               id: "IN-TG",
-              value: 0
+              value: data["index"]["Telangana"]
             },
             {
               id: "IN-GA",
-              value: 0
+              value: data["index"]["Goa"]
             },
             {
               id: "IN-DN",
-              value: 0
+              value: data["index"]["Dadra and Nagar Haveli and Daman and Diu"]
             },
             {
               id: "IN-DL",
-              value: 0
+              value: data["index"]["Delhi"]
             },
             {
               id: "IN-DD",
-              value: 0
+              value: data["index"]["Dadra and Nagar Haveli and Daman and Diu"]
             },
             {
               id: "IN-CH",
-              value: 0
+              value: data["index"]["Chandigarh"]
             },
             {
               id: "IN-CT",
-              value: 0
+              value: data["index"]["Chhattisgarh"]
             },
             {
               id: "IN-AS",
-              value: 0
+              value: data["index"]["Assam"]
             },
             {
               id: "IN-AR",
-              value: 0
+              value: data["index"]["Arunachal Pradesh"]
             },
             {
               id: "IN-AN",
-              value: 0
+              value: data["index"]["Andaman and Nicobar Islands"]
             },
             {
               id: "IN-KA",
-              value: 0
+              value: data["index"]["Karnataka"]
             },
             {
               id: "IN-KL",
-              value: 120000
+              value: data["index"]["Kerala"]
             },
             {
               id: "IN-OR",
-              value: 120000
+              value: data["index"]["Odisha"]
             },
             {
               id: "IN-SK",
-              value: 0
+              value: data["index"]["Sikkim"]
             },
             {
               id: "IN-HP",
-              value: 0
+              value: data["index"]["Himachal Pradesh"]
             },
             {
               id: "IN-PB",
-              value: 0
+              value: data["index"]["Punjab"]
             },
             {
               id: "IN-HR",
-              value: 0
+              value: data["index"]["Haryana"]
             },
             {
               id: "IN-UT",
-              value: 0
+              value: data["index"]["Uttarakhand"]
             },
             {
               id: "IN-LK",
-              value: 0
+              value: data["index"]["Ladakh"]
             },
             {
               id: "IN-MN",
-              value: 0
+              value: data["index"]["Manipur"]
             },
             {
               id: "IN-TR",
-              value: 0
+              value: data["index"]["Tripura"]
             },
             {
               id: "IN-MZ",
-              value: 0
+              value: data["index"]["Mizoram"]
             },
             {
               id: "IN-NL",
-              value: 0
+              value: data["index"]["Nagaland"]
             },
             {
               id: "IN-ML",
-              value: 0
+              value: data["index"]["Meghalaya"]
             }
           ];
 
@@ -191,7 +193,7 @@
 
           // Configure series tooltip
           var polygonTemplate = polygonSeries.mapPolygons.template;
-          polygonTemplate.tooltipText = "{name}: {value}";
+          polygonTemplate.tooltipText = "{name}";
           polygonTemplate.nonScalingStroke = true;
           polygonTemplate.strokeWidth = 0.5;
 
@@ -199,8 +201,8 @@
           var hs = polygonTemplate.states.create("hover");
           hs.properties.fill = am4core.color("#3c5bdc");
 
-//         }
-//         ) })
+        }
+        ) })
 
 
           // Filterng elements
