@@ -9,7 +9,8 @@
 	<script src="https://www.amcharts.com/lib/4/maps.js"></script>
 	<script src="https://www.amcharts.com/lib/4/geodata/india2019High.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-	<link rel="stylesheet" href="../static/heatmap.css">
+    <link rel="stylesheet" href="../static/heatmap.css">
+    
 
 	
         <!-- <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
@@ -19,11 +20,30 @@
 	<body>
 		<!-- <div id="myChart" class="chart--container">
 			<a class="zc-ref" href="https://www.zingchart.com/">Powered by ZingChart</a>
-		</div>
+        </div>
+        <!-- ---Filtering-- -->
+        <div id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn" onclick="filterSelection('active')"> Active Vulnerability Index</button>
+            <button class="btn" onclick="filterSelection('Health')"> Health Workers</button>
+            <button class="btn" onclick="filterSelection('Students')"> Students</button>
+            <button class="btn" onclick="filterSelection('Frontline')"> Front line workers</button>
+          </div>
+          
+          <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+          <div class="container">
+            <div class="filterDiv active">
+		        <div id="chartdiv"></div>
+
+            </div>
+            <div class="filterDiv colors fruits">Orange</div>
+            <div class="filterDiv cars">Volvo</div>
+            <div class="filterDiv colors">Red</div>
+           
+          </div>
 		
 		
-		<script type = "text/javascript" src="./heatmap.js"></script> -->
-		<div id="chartdiv"></div>
+		<script type = "text/javascript" src="./heatmap.js"></script> 
 		<script  src="../static/heatmap.js"></script>
 
 	</body>
