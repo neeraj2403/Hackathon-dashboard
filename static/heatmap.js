@@ -1,11 +1,11 @@
 
 
 // custom js
-Access-Control-Allow-Origin: https://amazing.site
+
 
 $(document).ready(function()
       {
-        var url = "http://127.0.0.1:5000/data"
+        var url = "http://127.0.0.1:5000/data" //error here
         $.getJSON(url,function(data)
         {
 
