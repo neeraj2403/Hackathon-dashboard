@@ -39,8 +39,19 @@ $(document).ready(function()
           let items = data.cases_time_series
           console.log(items)
 
+          var newval = []
+          var listitems = []
+          items.filter((item) => {
+            items_date = new Date(item.dateymd)
+            curr_date = new Date("2020-12-25")
+            return items_date > curr_date
 
-          var listitems = ""
+          }).forEach((item) =>{ listitems.push(item.dateymd)
+          newval.push(item.totalconfirmed)})
+            
+          
+
+          console.log(listitems)
 
 
           $.each(data.statewise,function(id,obj)
@@ -70,15 +81,16 @@ $(document).ready(function()
             type : "line",
 
             data : {
-            labels : date,
+            labels : listitems,
               
               datasets : [
                 {
                   label : "Confirmed Cases",
-                  data : total_confirmed,
+                  data : newval,
                   backgroundColor : "#ff0000",
+                  borderColor:"#ff0000",
                   minBarLength : 100,
-                  borderWidth : 0.5,
+                  borderWidth : 5,
                   pointRadius:1,
                   
                   fill : false
