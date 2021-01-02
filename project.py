@@ -45,7 +45,7 @@ def login():
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("ContactFrom_v3/index.html")
 
 @app.route("/data")
 def data():

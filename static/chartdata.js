@@ -38,7 +38,12 @@ $(document).ready(function()
 
 
 
-         
+         function filterbydate(item){
+           if(moment().subtract(30,'days').calender()){
+             return true
+           }
+           
+         }
 
 
           $.each(data.statewise,function(id,obj)
@@ -63,8 +68,8 @@ $(document).ready(function()
           recovered.shift()
           death.shift()
           // console.log(state);
-          var chart = document.getElementById("myChart").getContext("2d");
-          var chart = new Chart(myChart,{
+          var chart = document.getElementById("myChart1").getContext("2d");
+          var chart = new Chart(myChart1,{
             type : "line",
 
             data : {
@@ -80,8 +85,32 @@ $(document).ready(function()
                   pointRadius:1,
                   
                   fill : false
-                },
-                {
+                }
+              ]
+            },
+            options : {
+              responsive : false,
+              // scales:{
+              //   x:{
+                  
+                
+              //     // min : '22 November',
+              //     // max : '22 November'
+              //   }
+              // }
+
+            }
+          })
+          var chart = document.getElementById("myChart2").getContext("2d");
+          var chart = new Chart(myChart2,{
+            type : "line",
+
+            data : {
+            labels : date,
+              
+              datasets : [
+                
+                 {
                   label : "Recovered Cases",
                   data : total_recovered,
                   backgroundColor : "#009900",
@@ -89,7 +118,32 @@ $(document).ready(function()
                   fill : false,
                   borderWidth : 0.5,
                   pointRadius:1,
-                },
+                }
+                
+              ]
+            },
+            options : {
+              responsive : false,
+              // scales:{
+              //   x:{
+                  
+                
+              //     // min : '22 November',
+              //     // max : '22 November'
+              //   }
+              // }
+
+            }
+          })
+          var chart = document.getElementById("myChart3").getContext("2d");
+          var chart = new Chart(myChart3,{
+            type : "line",
+
+            data : {
+            labels : date,
+              
+              datasets : [
+                
                 {
                   label : "Deceased",
                   data : total_deceased,

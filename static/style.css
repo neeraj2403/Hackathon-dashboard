@@ -208,6 +208,7 @@ main{
   background:  rgb(82, 8, 135);
   grid-area: main;
   overflow-y: auto;
+  font-size: 10px;
 }
 
 .main__container{
@@ -227,7 +228,7 @@ main{
 
 .table1{
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
 
@@ -265,7 +266,7 @@ main{
   text-align: center;
   padding: 25px;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 10px;
 
 }
 .card2{
@@ -273,7 +274,7 @@ main{
   text-align: center;
   padding: 25px;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 10px;
 
 }
 .card3{
@@ -281,7 +282,7 @@ main{
   text-align: center;
   padding: 25px;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 10px;
 
 }
 .card4{
@@ -289,21 +290,22 @@ main{
   text-align: center;
   padding: 25px;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 10px;
 
 }
 
-@media only screen and (max-width:1255px){
+@media only screen and (max-width:955px){
   .table1{
       grid-template-columns: 1fr;
-      margin-top: 30px;
+      /* margin-top: 30px; */
       align-items: center;
-      margin-right: 1%;
+      margin: 3%;
   }
   /* .table__right{
     margin-right: 2%;
   } */
 }
+
 
 
 
