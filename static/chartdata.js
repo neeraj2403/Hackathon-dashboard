@@ -36,14 +36,11 @@ $(document).ready(function()
           })
           $("#table").append(record);
 
+          let items = data.cases_time_series
+          console.log(items)
 
 
-         function filterbydate(item){
-           if(moment().subtract(30,'days').calender()){
-             return true
-           }
-           
-         }
+          var listitems = ""
 
 
           $.each(data.statewise,function(id,obj)

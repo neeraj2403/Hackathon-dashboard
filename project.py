@@ -6,7 +6,7 @@ app= Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("ContactFrom_v3/index.html")
+    return render_template("form.html")
 
 @app.route("/data")
 def data():
