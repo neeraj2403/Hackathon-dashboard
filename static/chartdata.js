@@ -43,7 +43,7 @@ $(document).ready(function()
           var listitems = []
           items.filter((item) => {
             items_date = new Date(item.dateymd)
-            curr_date = new Date("2020-12-25")
+            curr_date = new Date(moment().subtract(30, 'days').calendar())
             return items_date > curr_date
 
           }).forEach((item) =>{ listitems.push(item.dateymd)
