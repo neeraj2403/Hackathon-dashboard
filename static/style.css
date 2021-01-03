@@ -205,14 +205,14 @@ a{
 
 
 main{
-  background:  rgb(82, 8, 135);
+  /* background:  rgb(82, 8, 135); */
   grid-area: main;
   overflow-y: auto;
   font-size: 10px;
 }
 
 .main__container{
-  padding: 20px 50px;
+  padding: 20px 20px;
 }
 
 .main__title{
@@ -222,7 +222,7 @@ main{
 
 .main__greeting > h1{
   font-size: 24px;
-  color: black;
+  color: white;
   margin-bottom: 5px;
 }
 
@@ -236,6 +236,7 @@ main{
   padding: 15px;
   border-radius: 5px;
   background: white;
+
 }
 
 .table__right{
@@ -294,26 +295,40 @@ main{
 
 }
 
-@media only screen and (max-width:955px){
-  .table1{
-      grid-template-columns: 1fr;
-      /* margin-top: 30px; */
-      align-items: center;
-      margin: 3%;
-  }
-  /* .table__right{
-    margin-right: 2%;
-  } */
+.charts{
+  margin-top: 20px !important;
+  align-items: center;
+  /* padding-left: 12em; */
+
+  /* padding: 35px; */
+  width: 95%;
 }
+#myChart1{
+  margin-top: 25px !important;
+  align-content: center;
+  padding-left: 4em;
 
+  
+}
+#myChart2{
+  margin-top: 25px !important;
+  align-content: center;
+  padding-left: 4em;
 
+  
+  
+}
+#myChart3{
+  margin-top: 25px !important;
+  align-content: center;
+  padding-left: 4em;
 
-
-
-
+  
+  
+}
 .container th h1 {
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1.25em;
 text-align: left;
 color: #185875;
 }
@@ -321,6 +336,7 @@ color: #185875;
 .container td {
   font-weight: normal;
   font-size: 1em;
+  /* gap: 6px; */
 /* -webkit-box-shadow: 0 2px 2px -2px #0E1119;
    -moz-box-shadow: 0 2px 2px -2px #0E1119;
         box-shadow: 0 2px 2px -2px #0E1119; */
@@ -328,11 +344,15 @@ color: #185875;
 
 .container {
   text-align: left;
-  overflow: hidden;
-  width: 100%;
+  overflow-x: auto;
+  width: fit-content;
+  max-width: 100%;
   margin: 0 auto;
-display: table;
-padding: 0 0 5em 0;
+display: block;
+padding: 0 0 10em 0;
+border-spacing: 3em 0
+
+
 }
 
 .container td, .container th {
@@ -355,7 +375,9 @@ padding-left:1.5%;
   background-color: pink;
 } */
 
-/* .container td:first-child { color: #FB667A; } */
+/* .container td:first-child { 
+  border-spacing: 10px 0 !important
+ } */
 
 /* .container tr:hover {
 background-color: #464A52;
@@ -382,3 +404,148 @@ transition-timing-function: line; */
 .container td:nth-child(4),
 .container th:nth-child(4) { display: none; }
 } */
+
+@media only screen and (max-width:1170px) and ( min-width: 626px){
+  .table1{
+      grid-template-columns: 1fr;
+      /* margin-top: 30px; */
+      align-items: center;
+      margin: 3%;
+  }
+  .container{
+    overflow-x: scroll;
+    display: block;
+    border-spacing: 6em 0;
+    width: fit-content;
+
+  }
+  .container th h1{
+    font-size: 1.5em;
+  }
+  .container td{
+    font-size: 1.25em;
+  }
+  .charts{
+    
+    align-items: center;
+    width: 100%;
+    /* padding: 10px; */
+    /* width: 95%; */
+  }
+
+  #myChart1{
+    margin-top: 25px !important;
+    align-content: center;
+    padding-left: 12em;
+
+    width: 75% !important;
+    height: 300px  !important;
+  }
+  #myChart2{
+    margin-top: 25px !important;
+
+    padding-left: 12em;
+
+    width: 75% !important;
+    height: 300px  !important;
+    
+  }
+  #myChart3{
+    margin-top: 25px !important;
+
+    padding-left: 12em;
+
+    width: 75% !important;
+    height: 300px  !important;
+    
+  }
+  
+  /* .table__right{
+    margin-right: 2%;
+  } */
+
+
+}
+
+@media only screen and (max-width:626px){
+  .table1{
+    grid-template-columns: 1fr;
+    /* margin-top: 30px; */
+    align-items: center;
+    margin: 3%;
+}
+.container{
+  overflow-x: scroll;
+  display: block;
+  border-spacing: 6em 0;
+  width: fit-content;
+
+}
+.container th h1{
+  font-size: 1.5em;
+}
+.container td{
+  font-size: 1.25em;
+}
+  
+  main{
+    /* padding: 20px 20px; */
+    width: 100%;
+  }
+  .table__right{
+    width: 100%;
+    align-items: center;
+  }
+  .table__left{
+    width: 100%;
+  }
+  .table__right__cards{
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap: 20px;
+    margin-top: 30px;
+    width: 100%;
+
+    
+    
+  }
+  .charts{
+    
+    align-items: center;
+    width: 100%;
+    /* padding: 10px; */
+    /* width: 95%; */
+  }
+
+  #myChart1{
+    margin-top: 25px !important;
+    padding-left: 0;
+    width: 100% !important;
+    height: 300px  !important;
+  }
+  #myChart2{
+    margin-top: 25px !important;
+    padding-left: 0;
+
+    width: 100% !important;
+    height: 300px  !important;
+    
+  }
+  #myChart3{
+    margin-top: 25px !important;
+    padding-left: 0;
+
+    width: 100% !important;
+    height: 300px  !important;
+    
+  }
+ 
+}
+
+
+
+
+
+
+
+
