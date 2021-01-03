@@ -1,19 +1,50 @@
-*{
-    margin: 0;
-    padding: 0;
-  }
+/* *{ */
+    
+    /* overflow: hidden; */
+  /* } */
   
   
   .card_grid{
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 20px;
-      margin-left: 50px;
+      margin-left: 10em;
+      margin-right: 10em;
       margin-top: 100px;
+      /* overflow: hidden; */
   }
   .dropdown{
-      margin-left: 43% !important;
+      align-items: center;
+      margin-left: 29% !important;
       margin-top: 50px;
-     
+      width: 80%;
+     /* overflow: hidden; */
       
+  }
+  .btn{
+      width: 50%;
+  }
+
+  .dropdown-menu{
+    width: 50%;
+  }
+
+
+  @media only screen and (max-width:998px ){
+
+    .card_grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding-left: 3em;
+        /* padding-right: 3.5em; */
+        /* margin-left: 2em;
+        margin-right: 2em; */
+    }
+    .card{
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+        /* padding-left: 30px; */
+    }
+
   }
