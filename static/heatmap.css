@@ -2,29 +2,62 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-#chartdiv {
+/* #chartdiv {
   width: 100%;
   height: 500px
-}
+} */
 /* -----Filtering--- */
 .container {
+  margin-top: 30px;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
 .filterDiv {
-  float: left;
+  /* float: left; */
   /* background-color: #2196F3; */
-  color: #ffffff;
-  /* width: 100px; */
+  /* color: hsl(0, 3%, 81%); */
+  width: 100%;
   /* line-height: 100px; */
   align-items: center;
-  /* margin: 2px; */
+  margin-left: 4em;
+  margin-top: 2em;
   display: none; /* Hidden by default */
+}
+
+ /* .filterDiv.active::after{
+  content: '';
+  position: absolute;
+  display: block;
+  align-content: center;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+}  */
+#chartdiv1{
+  width: 100%;
+  height: 400px;
+  /* padding: left 2em; */
+
+}
+#chartdiv2{
+  width: 100%;
+  height: 400px;
+
+}
+#chartdiv3{
+  width: 100%;
+  height: 400px;
+
 }
 
 /* The "show" class is added to the filtered elements */
 .show {
   display: block;
+  /* align-items: center; */
 }
 
 /* Style the buttons */
@@ -45,4 +78,36 @@ body {
 .btn.active {
   background-color: #666;
   color: white;
+  
+  
 }
+
+@media only screen and (max-width:1170px){
+  .container{
+    display: grid;
+  grid-template-columns: 1fr ;
+  
+  
+  }
+  .filterDiv{
+    margin-left: 1em;
+  }
+  #chartdiv1{
+    width: 95%;
+    height: 400px;
+    /* padding: left 2em; */
+  
+  }
+  #chartdiv2{
+    width: 95%;
+    height: 400px;
+  
+  }
+  #chartdiv3{
+    width: 95%;
+    height: 400px;
+  
+  }
+}
+
+

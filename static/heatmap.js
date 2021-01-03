@@ -26,6 +26,12 @@ $(document).ready(function()
 
           // Set map definition
           chart.geodata = am4geodata_india2019High;
+          chart.seriesContainer.draggable = false;
+          chart.seriesContainer.resizable = false;
+          chart.logo.height = -15;
+          chart.maxZoomLevel = 1;
+
+
 
           // Create map polygon series
           var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
@@ -228,6 +234,12 @@ $(document).ready(function()
 
           // Set map definition
           chart.geodata = am4geodata_india2019High;
+          chart.seriesContainer.draggable = false;
+          chart.seriesContainer.resizable = false;
+          chart.logo.height = -15;
+          chart.maxZoomLevel = 1;
+
+
 
           // Create map polygon series
           var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
@@ -429,6 +441,11 @@ $(document).ready(function()
 
           // Set map definition
           chart.geodata = am4geodata_india2019High;
+          chart.seriesContainer.draggable = false;
+          chart.seriesContainer.resizable = false;
+          chart.logo.height = -15;
+          chart.maxZoomLevel = 1;
+
 
           // Create map polygon series
           var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
@@ -443,7 +460,7 @@ $(document).ready(function()
 
           // Make map load polygon data (state shapes and names) from GeoJSON
           polygonSeries.useGeodata = true;
-
+          
           // Set heatmap values for each state
           polygonSeries.data = [
             {
