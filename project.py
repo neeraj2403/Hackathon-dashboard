@@ -17,6 +17,8 @@ with open('./Datasets/healthworkers_index') as h:
 with open('./Datasets/school_index') as s:
         school_json = json.load(s)
 
+with open('./Datasets/50plus_index') as s:
+        fiftyplus_json = json.load(s)
 
 
 
@@ -66,8 +68,13 @@ def health_workers():
 
 @app.route("/school")
 def school():
-    
+
     return school_json
+
+@app.route("/50plus")
+def fiftyplus():
+
+    return fiftyplus_json
 
 if __name__=='__main__':
     app.run(debug=True)
