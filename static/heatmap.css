@@ -53,6 +53,12 @@ body {
   height: 400px;
 
 }
+#chartdiv4{
+  width: 100%;
+  height: 400px;
+
+}
+
 
 /* The "show" class is added to the filtered elements */
 .show {
@@ -104,6 +110,11 @@ body {
   
   }
   #chartdiv3{
+    width: 95%;
+    height: 400px;
+  
+  }
+  #chartdiv4{
     width: 95%;
     height: 400px;
   
