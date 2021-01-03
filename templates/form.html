@@ -26,7 +26,11 @@
 	<!-- <div class="bg-contact3" style="background-image: url('images/bg-01.jpg');"> -->
 		<div class="container-contact3">
 			<div class="wrap-contact3">
-				<form class="contact3-form validate-form">
+				<h1>hello</h1>
+				{% if message %}
+				<p>{{ message }}</p>
+				{% endif %}
+				<form class="contact3-form validate-form" action="http://127.0.0.1:5000/form" method="post">
 					<span class="contact3-form-title">
 						Covid 19 Survey Form
 					</span>
@@ -62,7 +66,7 @@
 					</div>
 
 					<div class="wrap-input3 validate-input" data-validate = "Occupation is required">
-						<input class="input3" type="text" name="Occupation" placeholder="Your Occupation">
+						<input class="input3" type="text" name="occupation" placeholder="Your Occupation">
 						<span class="focus-input3"></span>
 					</div>
 					<div class="wrap-input3 validate-input" data-validate = "State is required">
@@ -112,6 +116,7 @@
 
 	<div id="dropDownSelect1"></div>
 
+	
 <!--===============================================================================================-->
 	<script src="../static/ContactFrom_v3/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

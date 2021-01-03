@@ -17,7 +17,10 @@ with open('./Datasets/healthworkers_index') as h:
 with open('./Datasets/school_index') as s:
         school = json.load(s)
 
-@app.route('/phase', methods=['post', 'get'])
+
+
+
+@app.route('/form', methods=['post', 'get'])
 def login():
     message = ''
     if request.method == 'POST':
@@ -27,11 +30,15 @@ def login():
         occupation = request.form.get('occupation')
         person = request.form.get('person with comorbidities ')
         comorbidities = request.form.get('comorbidities')
+        print(occupation, flush=True)
+
+        if occupation== 'Healthworker':
+            message='phase 1'
 
     
         
 
-    return render_template('index.html')
+    return render_template('form.html' ,message=message )
 
 
 
