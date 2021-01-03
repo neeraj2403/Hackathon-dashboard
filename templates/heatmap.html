@@ -5,11 +5,15 @@
 	<title>Heat Map</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
-
-	<script src="https://www.amcharts.com/lib/4/core.js"></script>
+    
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="//www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/maps.js"></script>
 	<script src="https://www.amcharts.com/lib/4/geodata/india2019High.js"></script>
-	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="//www.amcharts.com/lib/4/themes/kelly.js"></script>
+    
+    
     <link rel="stylesheet" href="../static/heatmap.css">
     
 
@@ -23,36 +27,30 @@
 			<a class="zc-ref" href="https://www.zingchart.com/">Powered by ZingChart</a>
         </div>
          ---Filtering-- -->
-        <div id="myBtnContainer">
-            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-            <button class="btn" onclick="filterSelection('activev')"> Active Vulnerability Index</button>
-            <button class="btn " onclick="filterSelection('Health')"> Health Workers</button>
-            <button class="btn " onclick="filterSelection('Students')"> Students</button>
-            <button class="btn " onclick="filterSelection('Frontline')"> Front line workers</button>
-          </div>
+        
           
           <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
           <div class="container">
-            <div class="filterDiv activev">
+            <div class="filterDiv">
                 <div id="chartdiv1"></div>
 		       
                 
 
             </div>
-            <div class="filterDiv Health">
+            <div class="filterDiv">
                 <div id="chartdiv2"></div>
 		       
                 
 
             </div>
-            <div class="filterDiv Students">
+            <div class="filterDiv">
                 <div id="chartdiv3"></div>
 		       
                 
 
             </div>
         </div>
-        <div class="filterDiv Frontline">
+        <div class="filterDiv">
             <div id="chartdiv4"></div>
            
             
@@ -62,8 +60,13 @@
           </div>
 		
 		
-		<!-- <script type = "text/javascript" src="./heatmap.js"></script>  -->
-		<script  src="../static/heatmap.js"></script>
+        <!-- <script type = "text/javascript" src="./heatmap.js"></script>  -->
+       
+        <script  src="../static/heatmap.js"></script>
+        <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+        
 
 	</body>
 </html>
