@@ -39,7 +39,9 @@ $(document).ready(function()
           let items = data.cases_time_series
           console.log(items)
 
-          var newval = []
+          var total_confirmed_30 = []
+          var total_deceased_30 = []
+          var total_recovered_30 = []
           var listitems = []
           items.filter((item) => {
             items_date = new Date(item.dateymd)
@@ -47,7 +49,11 @@ $(document).ready(function()
             return items_date > curr_date
 
           }).forEach((item) =>{ listitems.push(item.dateymd)
-          newval.push(item.totalconfirmed)})
+          total_confirmed_30.push(item.totalconfirmed)
+          total_recovered_30.push(item.totalrecovered)
+          total_deceased_30.push(item.totaldeceased)
+        
+        })
             
           
 
@@ -86,11 +92,11 @@ $(document).ready(function()
               datasets : [
                 {
                   label : "Confirmed Cases",
-                  data : newval,
-                  backgroundColor : "#ff0000",
-                  borderColor:"#ff0000",
+                  data : total_confirmed_30,
+                  backgroundColor : "#cf2b5f",
+                  borderColor:"#cf2b5f",
                   minBarLength : 100,
-                  borderWidth : 5,
+                  borderWidth : 3,
                   pointRadius:1,
                   
                   fill : false
@@ -99,6 +105,36 @@ $(document).ready(function()
             },
             options : {
               responsive : false,
+              legend: {
+                labels: {
+                    fontColor: '#cf2b5f',
+                    // fontSize: 18
+                }
+            },
+              scales: {
+                xAxes: [{
+                    gridLines: {
+                        display:false
+                    },
+                    ticks:{
+                      maxTicksLimit:8,
+                      fontColor : '#A4A8CD',
+                      fontSize: 9
+
+                    }
+                }],
+                yAxes: [{
+                    gridLines: {
+                        display:false,
+                        zeroLineColor: '#A4A8CD'
+                    },
+                    ticks:{
+                      maxTicksLimit:8,
+                      fontColor : '#A4A8CD',
+                      fontSize: 9
+                    }   
+                }]
+            }
               // scales:{
               //   x:{
                   
@@ -115,17 +151,18 @@ $(document).ready(function()
             type : "line",
 
             data : {
-            labels : date,
+            labels : listitems,
               
               datasets : [
                 
                  {
                   label : "Recovered Cases",
-                  data : total_recovered,
-                  backgroundColor : "#009900",
+                  data : total_recovered_30,
+                  backgroundColor : "#14cc9b",
+                  borderColor:"#14cc9b",
                   minBarLength : 100,
                   fill : false,
-                  borderWidth : 0.5,
+                  borderWidth : 2,
                   pointRadius:1,
                 }
                 
@@ -133,6 +170,34 @@ $(document).ready(function()
             },
             options : {
               responsive : false,
+              legend: {
+                labels: {
+                    fontColor: '#14cc9b',
+                    // fontSize: 18
+                }
+            },
+              scales: {
+                xAxes: [{
+                    gridLines: {
+                        display:false
+                    },
+                    ticks:{
+                      maxTicksLimit:8,
+                      fontColor : '#A4A8CD',
+                      fontSize: 9
+                    }
+                }],
+                yAxes: [{
+                    gridLines: {
+                        display:false
+                    },
+                    ticks:{
+                      maxTicksLimit:8,
+                      fontColor : '#A4A8CD',
+                      fontSize: 9
+                    }   
+                }]
+            }
               // scales:{
               //   x:{
                   
@@ -149,23 +214,55 @@ $(document).ready(function()
             type : "line",
 
             data : {
-            labels : date,
+            labels : listitems,
               
               datasets : [
                 
                 {
                   label : "Deceased",
-                  data : total_deceased,
-                  backgroundColor : "#000000",
+                  data : total_deceased_30,
+                  backgroundColor : "#84858a",
+                  borderColor:"#84858a",
                   minBarLength : 100,
                   fill : false,
-                  borderWidth : 0.5,
+                  borderWidth : 3,
                   pointRadius:1,
                 }
               ]
             },
             options : {
               responsive : false,
+              legend: {
+                labels: {
+                    fontColor: '#A4A8CD',
+                    // fontSize: 18
+                }
+            },
+
+
+              scales: {
+                
+                xAxes: [{
+                    gridLines: {
+                        display:false
+                    },
+                    ticks:{
+                      maxTicksLimit:8,
+                      fontColor : '#A4A8CD',
+                      fontSize: 9
+                    }
+                }],
+                yAxes: [{
+                    gridLines: {
+                        display:false
+                    },
+                    ticks:{
+                      maxTicksLimit:8,
+                      fontColor : '#A4A8CD',
+                      fontSize: 9
+                    }   
+                }]
+            }
               // scales:{
               //   x:{
                   

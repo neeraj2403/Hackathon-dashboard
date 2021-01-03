@@ -13,9 +13,9 @@
   --nav-width: 68px;
 
   /*===== Colors =====*/
-  --first-color: #F7F6FB;
-  --first-color-light:  rgb(82, 8, 143);
-  --white-color: rgb(82, 8, 143);
+  --first-color:#080F58;
+  --first-color-light:  #A4A8CD;
+  --white-color:#F7F6FB ;
   
   /*===== Font and typography =====*/
   --body-font: 'Nunito', sans-serif;
@@ -39,7 +39,7 @@ body{
   transition: .5s;
   box-sizing: border-box;
   
-  background-color: rgb(82, 8, 143);
+  background-color: #171E64;
 
 }
 
@@ -58,13 +58,13 @@ a{
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-  background-color: var(--white-color);
+  background-color: #171E64;
   z-index: var(--z-fixed);
   transition: .5s;
 }
 
 .header__toggle{
-  color: var(--first-color);
+  color: white;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -222,7 +222,7 @@ main{
 
 .main__greeting > h1{
   font-size: 24px;
-  color: white;
+  color: #A4A8CD;
   margin-bottom: 5px;
 }
 
@@ -234,25 +234,28 @@ main{
 
 .table__left{
   padding: 15px;
-  border-radius: 5px;
-  background: white;
+  border-radius: 20px;
+  background-color:#313673;
+  
+  border-color: var(--first-color) !important;
 
 }
 
 .table__right{
   padding: 25px;
   border-radius: 5px;
-  background: white;
+  background: transparent;
 
 }
 .table__right__title{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 .table__right__title>div>h1{
   font-size: 24px;
-  color: black;
+  color: #A4A8CD;
   margin-bottom: 5px;
 }
 
@@ -264,15 +267,18 @@ main{
 }
 .card1{
   
-  background: lightseagreen;
+  background: #32289B;
   text-align: center;
+  color: #F7F6FB;
   padding: 25px;
   border-radius: 5px;
   font-size: 10px;
 
 }
 .card2{
-  background: lightseagreen;
+  background: #EC336B;
+  color: #F7F6FB;
+
   text-align: center;
   padding: 25px;
   border-radius: 5px;
@@ -280,7 +286,9 @@ main{
 
 }
 .card3{
-  background: lightseagreen;
+  background: #14cc9b;
+  color: #F7F6FB;
+
   text-align: center;
   padding: 25px;
   border-radius: 5px;
@@ -288,7 +296,9 @@ main{
 
 }
 .card4{
-  background: lightseagreen;
+  background: #2f313d;
+  color: #F7F6FB;
+
   text-align: center;
   padding: 25px;
   border-radius: 5px;
@@ -308,7 +318,7 @@ main{
   margin-top: 25px !important;
   align-content: center;
   padding-left: 4em;
-
+  color: #000000;
   
 }
 #myChart2{
@@ -331,12 +341,13 @@ main{
   font-weight: bold;
   font-size: 1.25em;
 text-align: left;
-color: #185875;
+color: white
 }
 
 .container td {
   font-weight: normal;
   font-size: 1em;
+  color: #A4A8CD ;
   /* gap: 6px; */
 /* -webkit-box-shadow: 0 2px 2px -2px #0E1119;
    -moz-box-shadow: 0 2px 2px -2px #0E1119;
@@ -387,10 +398,10 @@ background-color: #464A52;
         box-shadow: 0 6px 6px -6px #0E1119;
 } */
 
-.container td:hover {
+/* .container td:hover {
 background-color: #FFF842;
-/* color: #403E10; */
-font-weight: bold;
+color: #403E10;
+font-weight: bold; */
 
 /* box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
 transform: translate3d(6px, -6px, 0);
@@ -399,7 +410,7 @@ transition-delay: 0s;
   transition-duration: 0.4s;
   transition-property: all;
 transition-timing-function: line; */
-}
+/* } */
 
 /* @media (max-width: 800px) {
 .container td:nth-child(4),
