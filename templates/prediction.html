@@ -19,31 +19,151 @@
           <li><a class="dropdown-item" href="#">Something else here</a></li>
         </ul>
       </div>
+      <h1>Phase 1</h1>
+      <h5>Phase 1 covers all healthcare and frontline workers . <br> Vaccine is distributed based on the vulnerability index</h5>
     <div class="card_grid">
+        
         <div class="card text-white bg-primary mb-3" style="max-width: 15rem;">
             <div class="card-header">Header</div>
             <div class="card-body">
-            <h5 class="card-title">Primary card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 class="card-title">Cluster 1</h5>
+            {% if phase1_0_day %}
+            <p class="card-text">Max no of days req {{ phase1_0_day }}</p>
+            {% endif %}
+                
+            {% if phase1_0_perc %}
+            <p class="card-text">Percentage of healthworkers coverd {{ phase1_0_perc }}</p>
+            {% endif %}
+                
+            <!-- {% if state_0 %}
+            <p class="card-text">States Covered</p>
+            {% for i in state_0 %}
+
+            <p class="card-text">{{ i }}</p>
+                
+            {% endfor %}
+            {% endif %} -->
+
             
             </div>
         </div>
         <div class="card text-white bg-secondary mb-3" style="max-width: 15rem;">
             <div class="card-header">Header</div>
             <div class="card-body">
-            <h5 class="card-title">Secondary card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 class="card-title">Cluster 2</h5>
+            {% if phase1_1_day %}
+            <p class="card-text">Max no of days req {{ phase1_1_day }}</p>
+            {% endif %}
+            
+
+            {% if phase1_1_perc %}
+            <p class="card-text">Percentage of healthworkers coverd {{ phase1_1_perc }}</p>
+            {% endif %}
+
+            <!-- {% if state_1 %}
+            <p class="card-text">States Covered</p>
+            {% for i in state_1 %}
+
+            <p class="card-text">{{ i }}</p>
+                
+            {% endfor %}
+            {% endif %} -->
+
+            
             </div>
+
         </div>
         <div class="card text-white bg-success mb-3" style="max-width: 15rem;">
             <div class="card-header">Header</div>
             <div class="card-body">
-            <h5 class="card-title">Success card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
+            <h5 class="card-title">Cluster 3</h5>
+            {% if phase1_2_day %}
+            <p class="card-text">Max no of days req {{ phase1_2_day }}</p>
+            {% endif %}
+
+            {% if phase1_2_perc %}
+            <p class="card-text">Percentage of healthworkers coverd {{ phase1_2_perc }}</p>
+            {% endif %}
+
+
+
+            <!-- {% if state_2 %}
+            <p class="card-text">States Covered</p>
+            {% for i in state_2 %}
+
+            <p class="card-text">{{ i }}</p>
+                
+            {% endfor %}
+            {% endif %} -->
+        </div>
+        </div>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+ <h1>Phase 2</h1>
+ <h5>Phase 2 covers all 50+ aged and People with comorbidities.</h5>
+ <br>
+ <br>   
+ <h3>50-60</h3>
+ <div class="card_grid">
+        
+    <div class="card text-white bg-primary mb-3" style="max-width: 15rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+        <h5 class="card-title">Cluster 1</h5>
+        {% if phase2_0_day_50_60 %}
+        <p class="card-text">Max no of days req {{ phase2_0_day_50_60 }}</p>
+        {% endif %}
+            
+        
+            
+        
+
+        
+        </div>
+    </div>
+    <div class="card text-white bg-secondary mb-3" style="max-width: 15rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+        <h5 class="card-title">Cluster 2</h5>
+        {% if phase2_1_day_50_60 %}
+        <p class="card-text">Max no of days req {{ phase2_1_day_50_60 }}</p>
+        {% endif %}
+        
+
+        
+
+        
+
+        
         </div>
 
+    </div>
+    <div class="card text-white bg-success mb-3" style="max-width: 15rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+        <h5 class="card-title">Cluster 3</h5>
+        {% if phase2_2_day_50_60 %}
+        <p class="card-text">Max no of days req {{ phase2_2_day_50_60 }}</p>
+        {% endif %}
 
+        
+
+
+
+        
+    </div>
+    </div>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 </body>
