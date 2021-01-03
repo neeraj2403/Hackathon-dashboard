@@ -2,10 +2,6 @@
 
 // custom js
 
-// import 'amcharts3/amcharts/amcharts';
-// import 'amcharts3/amcharts/serial';
-// import 'amcharts3/amcharts/themes/light';
-
 
 $(document).ready(function()
       {
@@ -34,8 +30,6 @@ $(document).ready(function()
           chart.seriesContainer.resizable = false;
           chart.logo.height = -15;
           chart.maxZoomLevel = 1;
-          
-
 
           // Create map polygon series
           var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
@@ -200,6 +194,14 @@ $(document).ready(function()
           ];
 
 
+
+          // Configure series tooltip
+          var polygonTemplate = polygonSeries.mapPolygons.template;
+          polygonTemplate.tooltipText = "{name}";
+          polygonTemplate.nonScalingStroke = true;
+          polygonTemplate.strokeWidth = 0.5;
+
+
           var heatLegend = chart.createChild(am4charts.HeatLegend);
           heatLegend.minColor = am4core.color("#F5DBCB");
           heatLegend.maxColor = am4core.color("#ED7B84");
@@ -211,12 +213,6 @@ $(document).ready(function()
           heatLegend.width = am4core.percent(25);
           heatLegend.paddingLeft = 20;
           heatLegend.valueAxis.renderer.labels.template.fontSize = 9;
-
-          // Configure series tooltip
-          var polygonTemplate = polygonSeries.mapPolygons.template;
-          polygonTemplate.tooltipText = "{name}";
-          polygonTemplate.nonScalingStroke = true;
-          polygonTemplate.strokeWidth = 0.5;
 
           // Create hover state and set alternative fill color
           var hs = polygonTemplate.states.create("hover");
@@ -253,8 +249,6 @@ $(document).ready(function()
           chart.seriesContainer.resizable = false;
           chart.logo.height = -15;
           chart.maxZoomLevel = 1;
-
-
 
           // Create map polygon series
           var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
@@ -473,7 +467,6 @@ $(document).ready(function()
           chart.logo.height = -15;
           chart.maxZoomLevel = 1;
 
-
           // Create map polygon series
           var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
 
@@ -487,7 +480,7 @@ $(document).ready(function()
 
           // Make map load polygon data (state shapes and names) from GeoJSON
           polygonSeries.useGeodata = true;
-          
+
           // Set heatmap values for each state
           polygonSeries.data = [
             {
@@ -664,54 +657,54 @@ $(document).ready(function()
         ) })
 
 
-//           // Filterng elements
-//           filterSelection("all")
-// function filterSelection(c) {
-//   var x, i;
-//   x = document.getElementsByClassName("filterDiv");
-//   if (c == "all") c = "";
-//   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-//   for (i = 0; i < x.length; i++) {
-//     w3RemoveClass(x[i], "show");
-//     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-//   }
-// }
+          // Filterng elements
+          filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
 
-// // Show filtered elements
-// function w3AddClass(element, name) {
-//   var i, arr1, arr2;
-//   arr1 = element.className.split(" ");
-//   arr2 = name.split(" ");
-//   for (i = 0; i < arr2.length; i++) {
-//     if (arr1.indexOf(arr2[i]) == -1) {
-//       element.className += " " + arr2[i];
-//     }
-//   }
-// }
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
 
-// // Hide elements that are not selected
-// function w3RemoveClass(element, name) {
-//   var i, arr1, arr2;
-//   arr1 = element.className.split(" ");
-//   arr2 = name.split(" ");
-//   for (i = 0; i < arr2.length; i++) {
-//     while (arr1.indexOf(arr2[i]) > -1) {
-//       arr1.splice(arr1.indexOf(arr2[i]), 1);
-//     }
-//   }
-//   element.className = arr1.join(" ");
-// }
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
 
-// // Add active class to the current control button (highlight it)
-// var btnContainer = document.getElementById("myBtnContainer");
-// var btns = btnContainer.getElementsByClassName("btn");
-// for (var i = 0; i < btns.length; i++) {
-//   btns[i].addEventListener("click", function() {
-//     var current = document.getElementsByClassName("active");
-//     current[0].className = current[0].className.replace(" active", "");
-//     this.className += " active";
-//   });
-// }
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
 
 
 
