@@ -39,7 +39,9 @@ $(document).ready(function()
           let items = data.cases_time_series
           console.log(items)
 
-          var newval = []
+          var total_confirmed_30 = []
+          var total_deceased_30 = []
+          var total_recovered_30 = []
           var listitems = []
           items.filter((item) => {
             items_date = new Date(item.dateymd)
@@ -47,7 +49,10 @@ $(document).ready(function()
             return items_date > curr_date
 
           }).forEach((item) =>{ listitems.push(item.dateymd)
-          newval.push(item.totalconfirmed)})
+          total_confirmed_30.push(item.totalconfirmed)
+          total_deceased_30.push(item.totaldeceased)
+          total_recovered_30.push(item.totalrecovered)
+        })
             
           
 
@@ -86,11 +91,11 @@ $(document).ready(function()
               datasets : [
                 {
                   label : "Confirmed Cases",
-                  data : newval,
+                  data : total_confirmed_30,
                   backgroundColor : "#ff0000",
                   borderColor:"#ff0000",
                   minBarLength : 100,
-                  borderWidth : 5,
+                  borderWidth : 3,
                   pointRadius:1,
                   
                   fill : false
@@ -99,6 +104,26 @@ $(document).ready(function()
             },
             options : {
               responsive : false,
+              scales: {
+                xAxes: [{
+                    gridLines: {
+                        display:false
+                    },
+                    ticks:{
+                      maxTicksLimit: 8
+
+                    }
+                }],
+                yAxes: [{
+                    gridLines: {
+                        display:false
+                    },
+                    ticks:{
+                      maxTicksLimit: 7
+
+                    }   
+                }]
+            }
               // scales:{
               //   x:{
                   
@@ -115,17 +140,19 @@ $(document).ready(function()
             type : "line",
 
             data : {
-            labels : date,
+            labels : listitems,
               
               datasets : [
                 
                  {
                   label : "Recovered Cases",
-                  data : total_recovered,
+                  data : total_recovered_30,
                   backgroundColor : "#009900",
+                  borderColor:"#009900",
+
                   minBarLength : 100,
                   fill : false,
-                  borderWidth : 0.5,
+                  borderWidth : 3,
                   pointRadius:1,
                 }
                 
@@ -133,6 +160,26 @@ $(document).ready(function()
             },
             options : {
               responsive : false,
+              scales: {
+                xAxes: [{
+                    gridLines: {
+                        display:false
+                    },
+                    ticks:{
+                      maxTicksLimit: 8
+
+                    }
+                }],
+                yAxes: [{
+                    gridLines: {
+                        display:false
+                    },
+                    ticks:{
+                      maxTicksLimit: 7
+
+                    }   
+                }]
+            }
               // scales:{
               //   x:{
                   
@@ -149,23 +196,45 @@ $(document).ready(function()
             type : "line",
 
             data : {
-            labels : date,
+            labels : listitems,
               
               datasets : [
                 
                 {
                   label : "Deceased",
-                  data : total_deceased,
+                  data : total_deceased_30,
                   backgroundColor : "#000000",
+                  borderColor:"#000000",
+
                   minBarLength : 100,
                   fill : false,
-                  borderWidth : 0.5,
+                  borderWidth : 3,
                   pointRadius:1,
                 }
               ]
             },
             options : {
               responsive : false,
+              scales: {
+                xAxes: [{
+                    gridLines: {
+                        display:false
+                    },
+                    ticks:{
+                      maxTicksLimit: 8
+
+                    }
+                }],
+                yAxes: [{
+                    gridLines: {
+                        display:false
+                    },
+                    ticks:{
+                      maxTicksLimit: 7
+
+                    }   
+                }]
+            }
               // scales:{
               //   x:{
                   
