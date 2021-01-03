@@ -5,17 +5,17 @@ import json
 app= Flask(__name__)
 
 with open('./Datasets/active_vulnerability_index') as f:
-        active_vulnerability_index= json.load(f)
+        active_vulnerability_index_json= json.load(f)
 
 
 
 with open('./Datasets/healthworkers_index') as h:
-        health_workers = json.load(h)
+        health_workers_json = json.load(h)
 
 
 
 with open('./Datasets/school_index') as s:
-        school = json.load(s)
+        school_json = json.load(s)
 
 
 
@@ -57,17 +57,17 @@ def index():
 @app.route("/data")
 def data():
     
-    return active_vulnerability_index
+    return active_vulnerability_index_json
 
 @app.route("/health_workers")
 def health_workers():
     
-    return health_workers
+    return health_workers_json
 
 @app.route("/school")
 def school():
     
-    return school
+    return school_json
 
 if __name__=='__main__':
     app.run(debug=True)
