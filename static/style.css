@@ -4,6 +4,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"); */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 /*===== VARIABLES CSS =====*/
+
+
+
+
 html{
   scroll-behavior: smooth;
 }
@@ -365,7 +369,7 @@ color: white
 
 .container {
   text-align: left;
-  overflow-x: auto;
+  /* overflow-x: auto; */
   width: fit-content;
   max-width: 100%;
   margin: 0 auto;
@@ -541,7 +545,7 @@ transition-timing-function: line; */
       margin: 3%;
   }
   .container{
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
     display: block;
     border-spacing: 6em 0;
     width: fit-content;
@@ -633,7 +637,7 @@ transition-timing-function: line; */
     margin: 3%;
 }
 .container{
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   display: block;
   border-spacing: 6em 0;
   width: fit-content;
