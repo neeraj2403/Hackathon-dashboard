@@ -604,16 +604,16 @@ transition-timing-function: line; */
     align-content: center;
     padding-left: 12em;
 
-    width: 85% !important;
-    height: 300px  !important;
+    width: 80% !important;
+    height: 400px  !important;
   }
   #myChart2{
     margin-top: 25px !important;
 
     padding-left: 12em;
 
-    width: 85% !important;
-    height: 300px  !important;
+    width: 80% !important;
+    height: 400px  !important;
     
   }
   #myChart3{
@@ -621,8 +621,8 @@ transition-timing-function: line; */
 
     padding-left: 12em;
 
-    width: 85% !important;
-    height: 300px  !important;
+    width: 80% !important;
+    height: 400px  !important;
     
   }
   .container1{
