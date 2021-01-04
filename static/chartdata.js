@@ -45,13 +45,13 @@ $(document).ready(function()
           var listitems = []
           items.filter((item) => {
             items_date = new Date(item.dateymd)
-            curr_date = new Date(moment().subtract(302, 'days').calendar())
+            curr_date = new Date(moment().subtract(8, 'days').calendar())
             return items_date > curr_date
 
           }).forEach((item) =>{ listitems.push(item.dateymd)
-          total_confirmed_30.push(item.totalconfirmed)
-          total_recovered_30.push(item.totalrecovered)
-          total_deceased_30.push(item.totaldeceased)
+          total_confirmed_30.push(item.dailyconfirmed)
+          total_recovered_30.push(item.dailyrecovered)
+          total_deceased_30.push(item.dailydeceased)
         
         })
             
@@ -84,7 +84,7 @@ $(document).ready(function()
           // console.log(state);
           var chart = document.getElementById("myChart1").getContext("2d");
           var chart = new Chart(myChart1,{
-            type : "line",
+            type : "bar",
 
             data : {
             labels : listitems,
@@ -114,7 +114,9 @@ $(document).ready(function()
               scales: {
                 xAxes: [{
                     gridLines: {
-                        display:false
+                        display:false,
+                        color: '#cf2b5f'
+
                     },
                     ticks:{
                       maxTicksLimit:8,
@@ -126,7 +128,7 @@ $(document).ready(function()
                 yAxes: [{
                     gridLines: {
                         display:false,
-                        zeroLineColor: '#A4A8CD'
+                        color: '#cf2b5f'
                     },
                     ticks:{
                       maxTicksLimit:8,
@@ -148,7 +150,7 @@ $(document).ready(function()
           })
           var chart = document.getElementById("myChart2").getContext("2d");
           var chart = new Chart(myChart2,{
-            type : "line",
+            type : "bar",
 
             data : {
             labels : listitems,
@@ -179,7 +181,8 @@ $(document).ready(function()
               scales: {
                 xAxes: [{
                     gridLines: {
-                        display:false
+                        display:false,
+                        color: '#14cc9b'
                     },
                     ticks:{
                       maxTicksLimit:8,
@@ -189,7 +192,8 @@ $(document).ready(function()
                 }],
                 yAxes: [{
                     gridLines: {
-                        display:false
+                        display:false,
+                        color: '#14cc9b'
                     },
                     ticks:{
                       maxTicksLimit:8,
@@ -211,7 +215,7 @@ $(document).ready(function()
           })
           var chart = document.getElementById("myChart3").getContext("2d");
           var chart = new Chart(myChart3,{
-            type : "line",
+            type : "bar",
 
             data : {
             labels : listitems,
@@ -244,7 +248,8 @@ $(document).ready(function()
                 
                 xAxes: [{
                     gridLines: {
-                        display:false
+                        display:false,
+                        color: '#84858a'
                     },
                     ticks:{
                       maxTicksLimit:8,
@@ -254,7 +259,8 @@ $(document).ready(function()
                 }],
                 yAxes: [{
                     gridLines: {
-                        display:false
+                        display:false,
+                        color: '#84858a'
                     },
                     ticks:{
                       maxTicksLimit:8,
