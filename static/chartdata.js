@@ -15,6 +15,40 @@ $(document).ready(function()
           var active_cases = []
           var record = ''
 
+          var curr_active = []
+          var curr_confirmed = []
+          var curr_recovered = []
+          var curr_deceased = []
+
+
+          curr_active.push(data.statewise[0].active)
+          curr_confirmed.push(data.statewise[0].confirmed)
+          curr_deceased.push(data.statewise[0].deaths)
+          curr_recovered.push(data.statewise[0].recovered)
+
+          $("#active").append(curr_active)
+          $("#confirmed").append(curr_confirmed)
+          $("#recovered").append(curr_recovered)
+          $("#deceased").append(curr_deceased)
+
+          $('#active').counterUp({
+            delay: 10,
+            time: 1000
+        });
+          $('#confirmed').counterUp({
+            delay: 10,
+            time: 1000
+        });
+          $('#recovered').counterUp({
+            delay: 10,
+            time: 1000
+        });
+          $('#deceased').counterUp({
+            delay: 10,
+            time: 1000
+        });
+
+
           $.each(data.statewise,function(id,obj)
           {
             state.push(obj.state)
@@ -45,13 +79,13 @@ $(document).ready(function()
           var listitems = []
           items.filter((item) => {
             items_date = new Date(item.dateymd)
-            curr_date = new Date(moment().subtract(302, 'days').calendar())
+            curr_date = new Date(moment().subtract(8, 'days').calendar())
             return items_date > curr_date
 
           }).forEach((item) =>{ listitems.push(item.dateymd)
-          total_confirmed_30.push(item.totalconfirmed)
-          total_recovered_30.push(item.totalrecovered)
-          total_deceased_30.push(item.totaldeceased)
+          total_confirmed_30.push(item.dailyconfirmed)
+          total_recovered_30.push(item.dailyrecovered)
+          total_deceased_30.push(item.dailydeceased)
         
         })
             
@@ -84,14 +118,14 @@ $(document).ready(function()
           // console.log(state);
           var chart = document.getElementById("myChart1").getContext("2d");
           var chart = new Chart(myChart1,{
-            type : "line",
+            type : "bar",
 
             data : {
             labels : listitems,
               
               datasets : [
                 {
-                  label : "Confirmed Cases",
+                  label : "Daily Confirmed Cases",
                   data : total_confirmed_30,
                   backgroundColor : "#cf2b5f",
                   borderColor:"#cf2b5f",
@@ -108,30 +142,37 @@ $(document).ready(function()
               legend: {
                 labels: {
                     fontColor: '#cf2b5f',
+                    fontFamily:"'Montserrat', sans-serif"
+
+                    
                     // fontSize: 18
                 }
             },
               scales: {
                 xAxes: [{
                     gridLines: {
-                        display:false
+                        display:false,
+                        color: '#cf2b5f'
+
                     },
                     ticks:{
                       maxTicksLimit:8,
                       fontColor : '#A4A8CD',
-                      fontSize: 9
+                      fontSize: 9,
+                      fontFamily:"'Montserrat', sans-serif"
 
                     }
                 }],
                 yAxes: [{
                     gridLines: {
                         display:false,
-                        zeroLineColor: '#A4A8CD'
+                        color: '#cf2b5f'
                     },
                     ticks:{
                       maxTicksLimit:8,
                       fontColor : '#A4A8CD',
-                      fontSize: 9
+                      fontSize: 9,
+                      fontFamily:"'Montserrat', sans-serif"
                     }   
                 }]
             }
@@ -148,7 +189,7 @@ $(document).ready(function()
           })
           var chart = document.getElementById("myChart2").getContext("2d");
           var chart = new Chart(myChart2,{
-            type : "line",
+            type : "bar",
 
             data : {
             labels : listitems,
@@ -156,7 +197,7 @@ $(document).ready(function()
               datasets : [
                 
                  {
-                  label : "Recovered Cases",
+                  label : "Daily Recovered Cases",
                   data : total_recovered_30,
                   backgroundColor : "#14cc9b",
                   borderColor:"#14cc9b",
@@ -173,28 +214,33 @@ $(document).ready(function()
               legend: {
                 labels: {
                     fontColor: '#14cc9b',
+                    fontFamily:"'Montserrat', sans-serif"
                     // fontSize: 18
                 }
             },
               scales: {
                 xAxes: [{
                     gridLines: {
-                        display:false
+                        display:false,
+                        color: '#14cc9b'
                     },
                     ticks:{
                       maxTicksLimit:8,
                       fontColor : '#A4A8CD',
-                      fontSize: 9
+                      fontSize: 9,
+                      fontFamily:"'Montserrat', sans-serif"
                     }
                 }],
                 yAxes: [{
                     gridLines: {
-                        display:false
+                        display:false,
+                        color: '#14cc9b'
                     },
                     ticks:{
                       maxTicksLimit:8,
                       fontColor : '#A4A8CD',
-                      fontSize: 9
+                      fontSize: 9,
+                      fontFamily:"'Montserrat', sans-serif"
                     }   
                 }]
             }
@@ -211,7 +257,7 @@ $(document).ready(function()
           })
           var chart = document.getElementById("myChart3").getContext("2d");
           var chart = new Chart(myChart3,{
-            type : "line",
+            type : "bar",
 
             data : {
             labels : listitems,
@@ -219,7 +265,7 @@ $(document).ready(function()
               datasets : [
                 
                 {
-                  label : "Deceased",
+                  label : "Daily Deceased",
                   data : total_deceased_30,
                   backgroundColor : "#84858a",
                   borderColor:"#84858a",
@@ -235,6 +281,7 @@ $(document).ready(function()
               legend: {
                 labels: {
                     fontColor: '#A4A8CD',
+                    fontFamily:"'Montserrat', sans-serif"
                     // fontSize: 18
                 }
             },
@@ -244,22 +291,26 @@ $(document).ready(function()
                 
                 xAxes: [{
                     gridLines: {
-                        display:false
+                        display:false,
+                        color: '#84858a'
                     },
                     ticks:{
                       maxTicksLimit:8,
                       fontColor : '#A4A8CD',
-                      fontSize: 9
+                      fontSize: 9,
+                      fontFamily:"'Montserrat', sans-serif"
                     }
                 }],
                 yAxes: [{
                     gridLines: {
-                        display:false
+                        display:false,
+                        color: '#84858a'
                     },
                     ticks:{
                       maxTicksLimit:8,
                       fontColor : '#A4A8CD',
-                      fontSize: 9
+                      fontSize: 9,
+                      fontFamily:"'Montserrat', sans-serif"
                     }   
                 }]
             }
