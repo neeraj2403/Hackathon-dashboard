@@ -210,7 +210,7 @@ $(document).ready(function()
           heatLegend.valign = "bottom" ;
           heatLegend.markerContainer.height =10;
           heatLegend.markerCount = 2;
-          heatLegend.width = am4core.percent(27);
+          heatLegend.width = am4core.percent(29);
           heatLegend.paddingLeft = 20;
           heatLegend.valueAxis.renderer.labels.template.fontSize = 9;
           heatLegend.stroke = am4core.color('#99E9FF');
@@ -429,7 +429,7 @@ $(document).ready(function()
           heatLegend.valign = "bottom" ;
           heatLegend.markerContainer.height =10;
           heatLegend.markerCount = 2;
-          heatLegend.width = am4core.percent(27);
+          heatLegend.width = am4core.percent(29);
           heatLegend.paddingLeft = 20;
           heatLegend.valueAxis.renderer.labels.template.fontSize = 9;
           heatLegend.stroke = am4core.color('#8AFFBB');
@@ -647,7 +647,7 @@ $(document).ready(function()
           heatLegend.valign = "bottom" ;
           heatLegend.markerContainer.height =10;
           heatLegend.markerCount = 2;
-          heatLegend.width = am4core.percent(27);
+          heatLegend.width = am4core.percent(29);
           heatLegend.paddingLeft = 20;
           heatLegend.valueAxis.renderer.labels.template.fontSize = 9;
           heatLegend.stroke = am4core.color('#FF8C8A');
@@ -866,7 +866,7 @@ $(document).ready(function()
             heatLegend.valign = "bottom" ;
             heatLegend.markerContainer.height =10;
             heatLegend.markerCount = 2;
-            heatLegend.width = am4core.percent(27);
+            heatLegend.width = am4core.percent(29);
             heatLegend.marginLeft = 30;
             heatLegend.paddingLeft = 20;
             heatLegend.paddingTop = 40;
