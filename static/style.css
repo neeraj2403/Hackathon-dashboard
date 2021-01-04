@@ -1,13 +1,22 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Vollkorn&display=swap');
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+/*===== VARIABLES CSS =====*/
+html{
+  scroll-behavior: smooth;
+}
 *{
   margin: 0;
   padding: 0;
+  font-family: 'Montserrat', sans-serif !important;
+
 }
 
 
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
-/*===== VARIABLES CSS =====*/
 :root{
   --header-height: 3rem;
   --nav-width: 68px;
@@ -28,13 +37,13 @@
 /*===== BASE =====*/
 *,::before,::after{
   box-sizing: border-box;
+  
 }
 
 body{
   position: relative;
   margin: var(--header-height) 0 0 0;
   padding: 0 1rem;
-  font-family: var(--body-font);
   font-size: var(--normal-font-size);
   transition: .5s;
   box-sizing: border-box;
@@ -255,7 +264,7 @@ main{
 }
 .table__right__title>div>h1{
   font-size: 24px;
-  color: #A4A8CD;
+  color: #8B772E;
   margin-bottom: 5px;
 }
 
@@ -339,14 +348,14 @@ main{
 }
 .container th h1 {
   font-weight: bold;
-  font-size: 1.25em;
+  font-size: 1.5em;
 text-align: left;
 color: white
 }
 
 .container td {
   font-weight: normal;
-  font-size: 1em;
+  font-size: 1.25em;
   color: #A4A8CD ;
   /* gap: 6px; */
 /* -webkit-box-shadow: 0 2px 2px -2px #0E1119;
@@ -417,6 +426,113 @@ transition-timing-function: line; */
 .container th:nth-child(4) { display: none; }
 } */
 
+
+/* heat map */
+
+.container1 {
+  margin-top: 30px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  
+}
+
+.filterDiv {
+  /* float: left; */
+  /* background-color: #2196F3; */
+  /* color: hsl(0, 3%, 81%); */
+  width: 100%;
+  /* line-height: 100px; */
+  align-items: center;
+  margin-left: 6em;
+  margin-top: 2em;
+  display: none; /* Hidden by default */
+}
+
+#maps h1{
+  font-size: 24px;
+  color: #A4A8CD;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#maps h2{
+  font-size: 18px;
+  color: #978497;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#maps p {
+  font-size: 10px;
+  color: #A4A8CD;
+  margin-bottom: 5px;
+  /* margin-top: 20px; */
+  margin-left: 20px;
+}
+ /* .filterDiv.active::after{
+  content: '';
+  position: absolute;
+  display: block;
+  align-content: center;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+}  */
+#chartdiv1{
+  width: 50%;
+  height: 400px;
+  /* padding: left 2em; */
+
+}
+#chartdiv2{
+  width: 50%;
+  height: 400px;
+
+}
+#chartdiv3{
+  width: 50%;
+  height: 400px;
+
+}
+#chartdiv4{
+  width: 50%;
+  height: 400px;
+
+}
+
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+  /* align-items: center; */
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
+  
+  
+}
+
 @media only screen and (max-width:1170px) and ( min-width: 626px){
   .table1{
       grid-template-columns: 1fr;
@@ -440,7 +556,7 @@ transition-timing-function: line; */
   .charts{
     
     align-items: center;
-    width: 100%;
+    width: 95%;
     /* padding: 10px; */
     /* width: 95%; */
   }
@@ -450,7 +566,7 @@ transition-timing-function: line; */
     align-content: center;
     padding-left: 12em;
 
-    width: 75% !important;
+    width: 85% !important;
     height: 300px  !important;
   }
   #myChart2{
@@ -458,7 +574,7 @@ transition-timing-function: line; */
 
     padding-left: 12em;
 
-    width: 75% !important;
+    width: 85% !important;
     height: 300px  !important;
     
   }
@@ -467,9 +583,39 @@ transition-timing-function: line; */
 
     padding-left: 12em;
 
-    width: 75% !important;
+    width: 85% !important;
     height: 300px  !important;
     
+  }
+  .container1{
+    display: grid;
+  grid-template-columns: 1fr ;
+  
+  
+  }
+  .filterDiv{
+    margin-left: 1em;
+  }
+  #chartdiv1{
+    width: 95%;
+    height: 400px;
+    /* padding: left 2em; */
+  
+  }
+  #chartdiv2{
+    width: 95%;
+    height: 400px;
+  
+  }
+  #chartdiv3{
+    width: 95%;
+    height: 400px;
+  
+  }
+  #chartdiv4{
+    width: 95%;
+    height: 400px;
+  
   }
   
   /* .table__right{
@@ -550,6 +696,36 @@ transition-timing-function: line; */
     width: 100% !important;
     height: 300px  !important;
     
+  }
+  .container1{
+    display: grid;
+  grid-template-columns: 1fr ;
+  
+  
+  }
+  .filterDiv{
+    margin-left: 1em;
+  }
+  #chartdiv1{
+    width: 95%;
+    height: 400px;
+    /* padding: left 2em; */
+  
+  }
+  #chartdiv2{
+    width: 95%;
+    height: 400px;
+  
+  }
+  #chartdiv3{
+    width: 95%;
+    height: 400px;
+  
+  }
+  #chartdiv4{
+    width: 95%;
+    height: 400px;
+  
   }
  
 }

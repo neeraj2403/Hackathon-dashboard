@@ -13,13 +13,14 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+  
 }
 
 .filterDiv {
   /* float: left; */
   /* background-color: #2196F3; */
   /* color: hsl(0, 3%, 81%); */
-  width: 100%;
+  width: 100em;
   /* line-height: 100px; */
   align-items: center;
   margin-left: 4em;
@@ -38,24 +39,24 @@ body {
   height: 0;
 }  */
 #chartdiv1{
-  width: 100%;
-  height: 400px;
+  width: 90%;
+  height: 500px;
   /* padding: left 2em; */
 
 }
 #chartdiv2{
-  width: 100%;
-  height: 400px;
+  width: 90%;
+  height: 500px;
 
 }
 #chartdiv3{
-  width: 100%;
-  height: 400px;
+  width: 90%;
+  height: 500px;
 
 }
 #chartdiv4{
-  width: 100%;
-  height: 400px;
+  width: 90%;
+  height: 500px;
 
 }
 
@@ -88,7 +89,7 @@ body {
   
 }
 
-@media only screen and (max-width:1170px){
+@media only screen and (max-width:1170px) and ( min-width: 626px){
   .container1{
     display: grid;
   grid-template-columns: 1fr ;
