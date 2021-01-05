@@ -5,17 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/prediction.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> -->
+    <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> -->
+    
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script> -->
+   <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-replace-svg="nest"></script>
 
 
-<body>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
+<body id ="body-pd">
 
+    
+    <header class="header" id="header">
+        <div class="header__toggle">
+            <i class='bx bx-menu' id="header-toggle"></i>
+        </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                
 
+                <div class="nav__list">
+                    
+                    <a href="" class="nav__link">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="nav__name">Dashboard</span>
+                    </a>
+
+                    <a href="" class="nav__link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span class="nav__name">Heat Maps</span>
+                    </a>
+                    
+                    <a href="#" class="nav__link active">
+                        <i class="fas fa-viruses"></i>
+
+                        <span class="nav__name">Predictions</span>
+                    </a>
+
+                    <a href="#" class="nav__link">
+                        <i class="fab fa-wpforms"></i>
+                        <span class="nav__name">Forms</span>
+                    </a>
+
+                    
+
+                    
+                </div>
+            </div>
+        </nav>
+    </div>
+
+<section id = "prediction">
     <div class="dropdown">
         <form method="POST" action="/priority">
             
@@ -35,7 +87,7 @@
                 {% endif %}
                 
               </select>
-              <button type="submit" class="btn btn-secondary"><i class="fas fa-search"></i></button>
+              <button type="submit" class="btn"><i class="fas fa-search"></i></button>
 
               
             </div>
@@ -54,16 +106,16 @@
       <h4>Phase 1 covers all healthcare and frontline workers. <br> Vaccine is distributed based on the vulnerability index</h4>
     <div class="card_grid">
         
-        <div class="card text-white bg-primary mb-3">
+        <div class="card text-white " id = "cluster1">
             <!-- <div class="card-header">Header</div> -->
             <div class="card-body">
             <h5 class="card-title">Cluster 2</h5>
             {% if phase1_2_day %}
-            <p class="card-text">Max no of days req {{ phase1_2_day }}</p>
+            <p class="card-text">Maximum number of days required: {{ phase1_2_day }}</p>
             {% endif %}
                 
             {% if phase1_2_perc %}
-            <p class="card-text">Percentage of healthworkers coverd {{ phase1_2_perc }}</p>
+            <p class="card-text">Percentage of healthworkers covered: {{ phase1_2_perc }}</p>
             {% endif %}
                 
             <!-- {% if state_0 %}
@@ -78,17 +130,17 @@
             
             </div>
         </div>
-        <div class="card text-white bg-secondary mb-3">
+        <div class="card text-white " id = "cluster2">
             <!-- <div class="card-header">Header</div> -->
             <div class="card-body">
             <h5 class="card-title">Cluster 1</h5>
             {% if phase1_1_day %}
-            <p class="card-text">Max no of days req {{ phase1_1_day }}</p>
+            <p class="card-text">Maximum number of days required: {{ phase1_1_day }}</p>
             {% endif %}
             
 
             {% if phase1_1_perc %}
-            <p class="card-text">Percentage of healthworkers coverd {{ phase1_1_perc }}</p>
+            <p class="card-text">Percentage of healthworkers covered: {{ phase1_1_perc }}</p>
             {% endif %}
 
             <!-- {% if state_1 %}
@@ -104,16 +156,16 @@
             </div>
 
         </div>
-        <div class="card text-white bg-success mb-3">
+        <div class="card text-white " id = "cluster3">
             <!-- <div class="card-header">Header</div> -->
             <div class="card-body">
             <h5 class="card-title">Cluster 0</h5>
             {% if phase1_0_day %}
-            <p class="card-text">Max no of days req {{ phase1_0_day }}</p>
+            <p class="card-text">Maximum number of days required: {{ phase1_0_day }}</p>
             {% endif %}
 
             {% if phase1_0_perc %}
-            <p class="card-text">Percentage of healthworkers coverd {{ phase1_0_perc }}</p>
+            <p class="card-text">Percentage of healthworkers covered: {{ phase1_0_perc }}</p>
             {% endif %}
 
 
@@ -147,12 +199,12 @@
  <h3>50-60</h3>
  <div class="card_grid">
         
-    <div class="card text-white bg-primary mb-3">
+    <div class="card text-white " id = "cluster1">
         <!-- <div class="card-header">Header</div> -->
         <div class="card-body">
         <h5 class="card-title">Cluster 1</h5>
         {% if phase2_2_day_50_60 %}
-        <p class="card-text">Max no of days req {{ phase2_2_day_50_60 }}</p>
+        <p class="card-text">Maximum number of days required: {{ phase2_2_day_50_60 }}</p>
         {% endif %}
             
         
@@ -162,12 +214,12 @@
         
         </div>
     </div>
-    <div class="card text-white bg-secondary mb-3">
+    <div class="card text-white " id = "cluster2">
         <!-- <div class="card-header">Header</div> -->
         <div class="card-body">
         <h5 class="card-title">Cluster 2</h5>
         {% if phase2_1_day_50_60 %}
-        <p class="card-text">Max no of days req {{ phase2_1_day_50_60 }}</p>
+        <p class="card-text">Maximum number of days required: {{ phase2_1_day_50_60 }}</p>
         {% endif %}
         
 
@@ -179,12 +231,12 @@
         </div>
 
     </div>
-    <div class="card text-white bg-success mb-3" >
+    <div class="card text-white " id = "cluster3">
         <!-- <div class="card-header">Header</div> -->
         <div class="card-body">
         <h5 class="card-title">Cluster 3</h5>
         {% if phase2_0_day_50_60 %}
-        <p class="card-text">Max no of days req {{ phase2_0_day_50_60 }}</p>
+        <p class="card-text">Maximum number of days required: {{ phase2_0_day_50_60 }}</p>
         {% endif %}
 
         
@@ -202,12 +254,12 @@
 
 <div class="card_grid">
         
-    <div class="card text-white bg-primary mb-3" >
+    <div class="card text-white " id = "cluster1" >
         <!-- <div class="card-header">Header</div> -->
         <div class="card-body">
         <h5 class="card-title">Cluster 1</h5>
         {% if phase2_2_day_60_70 %}
-        <p class="card-text">Max no of days req {{ phase2_2_day_60_70 }}</p>
+        <p class="card-text">Maximum number of days required: {{ phase2_2_day_60_70 }}</p>
         {% endif %}
             
         
@@ -217,12 +269,12 @@
         
         </div>
     </div>
-    <div class="card text-white bg-secondary mb-3" >
+    <div class="card text-white " id = "cluster2" >
         <!-- <div class="card-header">Header</div> -->
         <div class="card-body">
         <h5 class="card-title">Cluster 2</h5>
         {% if phase2_1_day_60_70 %}
-        <p class="card-text">Max no of days req {{ phase2_1_day_60_70 }}</p>
+        <p class="card-text">Maximum number of days required: {{ phase2_1_day_60_70 }}</p>
         {% endif %}
         
 
@@ -234,12 +286,12 @@
         </div>
 
     </div>
-    <div class="card text-white bg-success mb-3">
+    <div class="card text-white " id = "cluster3">
         <!-- <div class="card-header">Header</div> -->
         <div class="card-body">
         <h5 class="card-title">Cluster 3</h5>
         {% if phase2_0_day_60_70 %}
-        <p class="card-text">Max no of days req {{ phase2_0_day_60_70 }}</p>
+        <p class="card-text">Maximum number of days required: {{ phase2_0_day_60_70 }}</p>
         {% endif %}
 
         
@@ -254,12 +306,12 @@
 <h3>70-80</h3>
 <div class="card_grid">
         
-    <div class="card text-white bg-primary mb-3" >
+    <div class="card text-white " id = "cluster1" >
         <!-- <div class="card-header">Header</div> -->
         <div class="card-body">
         <h5 class="card-title">Cluster 1</h5>
         {% if phase2_2_day_70_80 %}
-        <p class="card-text">Max no of days req {{ phase2_2_day_70_80 }}</p>
+        <p class="card-text">Maximum number of days required: {{ phase2_2_day_70_80 }}</p>
         {% endif %}
             
         
@@ -269,12 +321,12 @@
         
         </div>
     </div>
-    <div class="card text-white bg-secondary mb-3" >
+    <div class="card text-white " id = "cluster2" >
         <!-- <div class="card-header">Header</div> -->
         <div class="card-body">
         <h5 class="card-title">Cluster 2</h5>
         {% if phase2_1_day_70_80 %}
-        <p class="card-text">Max no of days req {{ phase2_1_day_70_80 }}</p>
+        <p class="card-text">Maximum number of days required: {{ phase2_1_day_70_80 }}</p>
         {% endif %}
         
 
@@ -286,12 +338,12 @@
         </div>
 
     </div>
-    <div class="card text-white bg-success mb-3" >
+    <div class="card text-white " id = "cluster3">
         <!-- <div class="card-header">Header</div> -->
         <div class="card-body">
         <h5 class="card-title">Cluster 3</h5>
         {% if phase2_0_day_70_80 %}
-        <p class="card-text">Max no of days req {{ phase2_0_day_70_80 }}</p>
+        <p class="card-text">Maximum number of days required: {{ phase2_0_day_70_80 }}</p>
         {% endif %}
 
         
@@ -305,12 +357,12 @@
 <h3>80+</h3>
 <div class="card_grid">
         
-    <div class="card text-white bg-primary mb-3" >
+    <div class="card text-white " id = "cluster1" >
         <!-- <div class="card-header">Header</div> -->
         <div class="card-body">
         <h5 class="card-title">Cluster 1</h5>
         {% if phase2_2_day_80 %}
-        <p class="card-text">Max no of days req {{ phase2_2_day_80 }}</p>
+        <p class="card-text">Maximum number of days required: {{ phase2_2_day_80 }}</p>
         {% endif %}
             
         
@@ -320,12 +372,12 @@
         
         </div>
     </div>
-    <div class="card text-white bg-secondary mb-3" >
+    <div class="card text-white " id = "cluster2" >
         <!-- <div class="card-header">Header</div> -->
         <div class="card-body">
         <h5 class="card-title">Cluster 2</h5>
         {% if phase2_1_day_80 %}
-        <p class="card-text">Max no of days req {{ phase2_1_day_80 }}</p>
+        <p class="card-text">Maximum number of days required: {{ phase2_1_day_80 }}</p>
         {% endif %}
         
 
@@ -337,12 +389,12 @@
         </div>
 
     </div>
-    <div class="card text-white bg-success mb-3" >
+    <div class="card text-white "id = "cluster3" >
         <!-- <div class="card-header">Header</div> -->
         <div class="card-body">
         <h5 class="card-title">Cluster 3</h5>
         {% if phase2_0_day_80 %}
-        <p class="card-text">Max no of days req {{ phase2_0_day_80 }}</p>
+        <p class="card-text">Maximum number of days required: {{ phase2_0_day_80 }}</p>
         {% endif %}
 
         
@@ -359,12 +411,12 @@
 <h4>School going students</h4>
 <div class="card_grid">
         
-    <div class="card text-white bg-primary mb-3" >
+    <div class="card text-white " id = "cluster1">
         <!-- <div class="card-header">Header</div> -->
         <div class="card-body">
         <h5 class="card-title">Cluster 1</h5>
         {% if phase3_2_day %}
-        <p class="card-text">Max no of days req {{ phase3_2_day }}</p>
+        <p class="card-text">Maximum number of days required: {{ phase3_2_day }}</p>
         {% endif %}
             
         
@@ -374,12 +426,12 @@
         
         </div>
     </div>
-    <div class="card text-white bg-secondary mb-3" >
+    <div class="card text-white " id = "cluster2">
         <!-- <div class="card-header">Header</div> -->
         <div class="card-body">
         <h5 class="card-title">Cluster 2</h5>
         {% if phase3_1_day %}
-        <p class="card-text">Max no of days req {{ phase3_1_day }}</p>
+        <p class="card-text">Maximum number of days required: {{ phase3_1_day }}</p>
         {% endif %}
         
 
@@ -391,12 +443,12 @@
         </div>
 
     </div>
-    <div class="card text-white bg-success mb-3">
+    <div class="card text-white" id = "cluster3">
         <!-- <div class="card-header">Header</div> -->
         <div class="card-body">
         <h5 class="card-title">Cluster 3</h5>
         {% if phase3_0_day %}
-        <p class="card-text">Max no of days req {{ phase3_0_day }}</p>
+        <p class="card-text">Maximum number of days required: {{ phase3_0_day }}</p>
         {% endif %}
 
         
@@ -415,62 +467,65 @@
 
 <h1>{{ state }}</h1>
 <br><br>
-<div class="card2 text-white bg-primary mb-3">
+<div class="card2 text-white" id = "box1">
 
-<h3>Phase 1</h3>
-<p>percentage of health workers: {{ state_phase1_data['Health Workers(%)'] }}</p>
-<p>cluster number : {{ (state_phase1_data['index'] )}}</p>
-<p>starting date of vaccination :</p>
-<p>total days needed: {{ (state_phase1_data['no of days_health care'] )}}</p>
+<h3>PHASE 1</h3>
+<h4>Heath and frontline workers</h4>
+
+<p>Percentage of health workers: {{ state_phase1_data['Health Workers(%)'] }}</p>
+<p>Cluster number: {{ (state_phase1_data['index'] )}}</p>
+<p>Starting date of vaccination: </p>
+<p>Total days needed: {{ (state_phase1_data['no of days_health care'] )}}</p>
 </div>
 
-<div class="card2 text-white bg-primary mb-3">
+<div class="card2 text-white "id = "box2">
 
-<h3>Phase 2</h3>
+<h3>PHASE 2</h3>
 
-<h4>80+</h4>
-<p>days needed :{{state_selected_ph2_80['days_needed']}}</p>
+<h4>Age : Greater than 80</h4>
+<p>Days needed:{{state_selected_ph2_80['days_needed']}}</p>
 
-<p>cluster number : {{state_selected_ph2_80['index']}}</p>
+<p>Cluster number:  {{state_selected_ph2_80['index']}}</p>
 
-<p>population to cover : {{state_selected_ph2_80['80+']}}</p>
+<p>Population to cover:  {{state_selected_ph2_80['80+']}}</p>
 
-<h4>70-80</h4>
-<p>days needed :{{state_selected_ph2_70_80['days_needed']}}</p>
+<h4>Age: 70 - 80</h4>
+<p>Days needed:{{state_selected_ph2_70_80['days_needed']}}</p>
 
-<p>cluster number : {{state_selected_ph2_70_80['index']}}</p>
+<p>Cluster number: {{state_selected_ph2_70_80['index']}}</p>
 
-<p>population to cover : {{state_selected_ph2_70_80['70-80']}}</p>
-<h4>60-70</h4>
-<p>days needed :{{state_selected_ph2_60_70['days_needed']}}</p>
+<p>Population to cover: {{state_selected_ph2_70_80['70-80']}}</p>
+<h4>Age: 60 - 70</h4>
+<p>Days needed: {{state_selected_ph2_60_70['days_needed']}}</p>
 
-<p>cluster number : {{state_selected_ph2_60_70['index']}}</p>
+<p>Cluster number: {{state_selected_ph2_60_70['index']}}</p>
 
-<p>population to cover : {{state_selected_ph2_60_70['60-70']}}</p>
+<p>Population to cover: {{state_selected_ph2_60_70['60-70']}}</p>
 
-<h4>50-60</h4>
-<p>days needed :{{state_selected_ph2_50_60['days_needed']}}</p>
+<h4>Age: 50 - 60</h4>
+<p>Days needed: {{state_selected_ph2_50_60['days_needed']}}</p>
 
-<p>cluster number : {{state_selected_ph2_50_60['index']}}</p>
+<p>Cluster number: {{state_selected_ph2_50_60['index']}}</p>
 
-<p>population to cover : {{state_selected_ph2_50_60['50-60']}}</p>
+<p>Population to cover: {{state_selected_ph2_50_60['50-60']}}</p>
 
 </div>
-<div class="card2 text-white bg-primary mb-3">
+<div class="card2 text-white " id = "box3">
 
-<h3>Phase 3</h3>
-<h4>School Going Students</h4>
-<p>days needed :{{state_selected_ph3['days_needed']}}</p>
+<h3>PHASE 3</h3>
+<h4>School going students</h4>
+<p>Days needed: {{state_selected_ph3['days_needed']}}</p>
 
-<p>cluster number : {{state_selected_ph3['index']}}</p>
-<p>population to cover : {{state_selected_ph3['15-19']}}</p>
+<p>Cluster number: {{state_selected_ph3['index']}}</p>
+<p>Population to cover: {{state_selected_ph3['15-19']}}</p>
 </div>
 
 
 
 {% endif %}
-
+</section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="static/app.js"></script>
 
 </body>
 </html>
