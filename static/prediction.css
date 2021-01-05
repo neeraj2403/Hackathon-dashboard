@@ -10,25 +10,63 @@
       gap: 20px;
       margin-left: 10em;
       margin-right: 10em;
-      margin-top: 100px;
+      margin-top: 50px;
+      margin-bottom: 50px;
       /* overflow: hidden; */
   }
   .dropdown{
       align-items: center;
-      margin-left: 29% !important;
+      margin-left: 34% !important;
       margin-top: 50px;
-      width: 80%;
+      width: 60%;
+      /* display: inline-block; */
      /* overflow: hidden; */
       
   }
+  .form-group{
+    display: inline-block !important;
+  }
   .btn{
-      width: 50%;
+    margin-top: 20px;
+    margin-left: 24%;
+    width: 50% !important;
   }
 
-  .dropdown-menu{
+  .form-group{
     width: 50%;
   }
-
+.card{
+  height: 200px;
+  
+}
+.card2{
+  margin-top: 20px;
+  margin-left: 25%;
+  margin-right: 20%;
+  width: 50%;
+  padding: 10px;
+}
+.card2 h3{
+margin: 15px;
+}
+.card2 p {
+  margin-left: 15px;
+}
+.card2 h4{
+  margin-left: 15px;
+}
+h1{
+  margin: 30px;
+}
+h4{
+  margin-left: 30px;
+}
+h3{
+  margin-left: 30px;
+}
+.form-control{
+  width: 100% !important;
+}
 
   @media only screen and (max-width:998px ){
 
