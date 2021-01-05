@@ -1,5 +1,5 @@
 from flask import Flask, render_template , request
-import requests
+
 import json
 import math
 
@@ -52,20 +52,55 @@ with open('./Datasets/New Folder/state_2_ph1') as s:
 
 
 # phase 2
+with open('./Datasets/New Folder/phase2_state_50_60') as s:
+        phase2_50_60_state_json = json.load(s)
+with open('./Datasets/New Folder/phase2_state_60_70') as s:
+        phase2_60_70_state_json = json.load(s)
+with open('./Datasets/New Folder/phase2_state_70_80') as s:
+        phase2_70_80_state_json = json.load(s)
+with open('./Datasets/New Folder/phase2_state_80') as s:
+        phase2_80_state_json = json.load(s)
+
+
+# phase 3
+with open('./Datasets/New Folder/phase3_state_15_19') as s:
+        phase3_state_json = json.load(s)
+
+
+# phase 1 state
+with open('./Datasets/New Folder/phase1_state') as s:
+        phase1_state = json.load(s)
+
+# phase 2 state
+with open('./Datasets/New Folder/phase2_state_50_60') as s:
+        phase2_state_50_60 = json.load(s)
+
+with open('./Datasets/New Folder/phase2_state_60_70') as s:
+        phase2_state_60_70 = json.load(s)
+
+with open('./Datasets/New Folder/phase2_state_70_80') as s:
+        phase2_state_70_80 = json.load(s)
+
+with open('./Datasets/New Folder/phase2_state_80') as s:
+        phase2_state_80 = json.load(s)
+
+
+with open('./Datasets/New Folder/phase3_state_15_19') as s:
+        phase3 = json.load(s)
 
 
 
-
-
-
-@app.route('/priority', methods=['post', 'get'])
+@app.route('/priority',  methods=('GET', 'POST'))
 def priority():
 
+        
     # phase1 days
     phase1_0_day= phase1_india_json['no of days_health care']['0']
     phase1_1_day= phase1_india_json['no of days_health care']['1']
     phase1_2_day= phase1_india_json['no of days_health care']['2']
     
+
+
     # phase1 percentage covered
     phase1_0_perc=phase1_india_json['per_coverd']['0']
     phase1_1_perc=phase1_india_json['per_coverd']['1']
@@ -76,9 +111,83 @@ def priority():
     phase2_0_day_50_60=39
     phase2_1_day_50_60=38
     phase2_2_day_50_60=39
+
+    phase2_0_day_60_70=28
+    phase2_1_day_60_70=23
+    phase2_2_day_60_70=32
+
+    phase2_0_day_70_80=11
+    phase2_1_day_70_80=12
+    phase2_2_day_70_80=9
+
+    phase2_0_day_80=5
+    phase2_1_day_80=4
+    phase2_2_day_80=4
+
+
+    #phase3 day
+    phase3_0_day=57
+    phase3_1_day=48
+    phase3_2_day=55
     
+    state_selected='India'
+    state_selected_ph1 = ''
+    state_selected_ph2_50_60 = ''
+    state_selected_ph2_60_70 = ''
+    state_selected_ph2_70_80 = ''
+    state_selected_ph2_80 = ''
+    state_selected_ph3 = ''
+    
+    
+    
+    
+    
+    
+    if request.method == 'POST':
+           state_selected = request.form['state']
+           print(state_selected,flush=True)
+           for i in phase1_state:
+            if i['State']==state_selected:
+                    state_selected_ph1 = i
+           
+           
+           
+           for i in phase2_state_50_60:
+                if i['State']==state_selected:
+                    state_selected_ph2_50_60 = i         
+           
+
+           for i in phase2_state_60_70:
+                if i['State']==state_selected:
+                    state_selected_ph2_60_70 = i
+           
+
+           for i in phase2_state_70_80:
+                if i['State']==state_selected:
+                    state_selected_ph2_70_80 = i
+
+           for i in phase2_state_80:
+                if i['State']==state_selected:
+                    state_selected_ph2_80 = i
+           
+
+           for i in phase3:
+                if i['State']==state_selected:
+                    state_selected_ph3 = i
+
+          
+
+
+
+
+
+
+
+
+
 
     return render_template('prediction.html',
+    state=state_selected,
     phase1_0_day=math.ceil(phase1_0_day),
     phase1_1_day=math.ceil(phase1_1_day),
     phase1_2_day=math.ceil(phase1_2_day),
@@ -90,15 +199,31 @@ def priority():
     state_2=state_2,
     phase2_0_day_50_60=phase2_0_day_50_60,
     phase2_1_day_50_60=phase2_1_day_50_60,
-    phase2_2_day_50_60=phase2_2_day_50_60
+    phase2_2_day_50_60=phase2_2_day_50_60,
+    phase2_0_day_60_70=phase2_0_day_60_70,
+    phase2_1_day_60_70=phase2_1_day_60_70,
+    phase2_2_day_60_70=phase2_2_day_60_70,
+    phase2_0_day_70_80=phase2_0_day_70_80,
+    phase2_1_day_70_80=phase2_1_day_70_80,
+    phase2_2_day_70_80=phase2_2_day_70_80,
+    phase2_0_day_80=phase2_0_day_80,
+    phase2_1_day_80=phase2_1_day_80,
+    phase2_2_day_80=phase2_2_day_80,
+    phase2_50_60_state_json =phase2_50_60_state_json,
+    phase2_60_70_state_json =phase2_60_70_state_json,
+    phase2_70_80_state_json =phase2_70_80_state_json,
+    phase2_80_state_json    =phase2_80_state_json,
+    phase3_0_day=phase3_0_day,
+    phase3_1_day=phase3_1_day,
+    phase3_2_day=phase3_2_day,
+    states=active_vulnerability_index_json['index'],
+    state_phase1_data=state_selected_ph1,
+    state_selected_ph2_50_60=state_selected_ph2_50_60,
+    state_selected_ph2_60_70=state_selected_ph2_60_70,
+    state_selected_ph2_70_80=state_selected_ph2_70_80,
+    state_selected_ph2_80=state_selected_ph2_80,
+    state_selected_ph3=state_selected_ph3
     )
-
-
-
-
-
-
-
 
 
 

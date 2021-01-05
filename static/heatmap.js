@@ -203,16 +203,17 @@ $(document).ready(function()
 
 
           var heatLegend = chart.createChild(am4charts.HeatLegend);
-          heatLegend.minColor = am4core.color("#F5DBCB");
-          heatLegend.maxColor = am4core.color("#ED7B84");
+          heatLegend.minColor = am4core.color("#99E9FF");
+          heatLegend.maxColor = am4core.color("#3B8BB0");
           heatLegend.minValue = 0;
           heatLegend.maxValue = 2;
           heatLegend.valign = "bottom" ;
           heatLegend.markerContainer.height =10;
           heatLegend.markerCount = 2;
-          heatLegend.width = am4core.percent(25);
+          heatLegend.width = am4core.percent(29);
           heatLegend.paddingLeft = 20;
           heatLegend.valueAxis.renderer.labels.template.fontSize = 9;
+          heatLegend.stroke = am4core.color('#99E9FF');
 
           // Create hover state and set alternative fill color
           var hs = polygonTemplate.states.create("hover");
@@ -257,8 +258,8 @@ $(document).ready(function()
           polygonSeries.heatRules.push({
             property: "fill",
             target: polygonSeries.mapPolygons.template,
-            min: chart.colors.getIndex(20).brighten(1),
-            max: chart.colors.getIndex(20).brighten(-0.3)
+            min: chart.colors.getIndex(17).brighten(1),
+            max: chart.colors.getIndex(17).brighten(-0.3)
           });
 
           // Make map load polygon data (state shapes and names) from GeoJSON
@@ -421,20 +422,21 @@ $(document).ready(function()
           polygonTemplate.strokeWidth = 0.5;
 
           var heatLegend = chart.createChild(am4charts.HeatLegend);
-          heatLegend.minColor = am4core.color("#F5DBCB");
-          heatLegend.maxColor = am4core.color("#ED7B84");
+          heatLegend.minColor = am4core.color("#8AFFBB");
+          heatLegend.maxColor = am4core.color("#259A56");
           heatLegend.minValue = 0;
           heatLegend.maxValue = 2;
           heatLegend.valign = "bottom" ;
           heatLegend.markerContainer.height =10;
           heatLegend.markerCount = 2;
-          heatLegend.width = am4core.percent(25);
+          heatLegend.width = am4core.percent(29);
           heatLegend.paddingLeft = 20;
           heatLegend.valueAxis.renderer.labels.template.fontSize = 9;
+          heatLegend.stroke = am4core.color('#8AFFBB');
 
           // Create hover state and set alternative fill color
           var hs = polygonTemplate.states.create("hover");
-          hs.properties.fill = am4core.color("#3c5bdc");
+          hs.properties.fill = am4core.color("#11dc40");
 
         }
         ) })
@@ -474,8 +476,8 @@ $(document).ready(function()
           polygonSeries.heatRules.push({
             property: "fill",
             target: polygonSeries.mapPolygons.template,
-            min: chart.colors.getIndex(20).brighten(1),
-            max: chart.colors.getIndex(20).brighten(-0.3)
+            min: chart.colors.getIndex(9).brighten(1),
+            max: chart.colors.getIndex(9).brighten(-0.5)
           });
 
           // Make map load polygon data (state shapes and names) from GeoJSON
@@ -638,20 +640,22 @@ $(document).ready(function()
           polygonTemplate.strokeWidth = 0.5;
 
           var heatLegend = chart.createChild(am4charts.HeatLegend);
-          heatLegend.minColor = am4core.color("#F5DBCB");
-          heatLegend.maxColor = am4core.color("#ED7B84");
+          heatLegend.minColor = am4core.color("#FF8C8A");
+          heatLegend.maxColor = am4core.color("#B74645");
           heatLegend.minValue = 0;
           heatLegend.maxValue = 2;
           heatLegend.valign = "bottom" ;
           heatLegend.markerContainer.height =10;
           heatLegend.markerCount = 2;
-          heatLegend.width = am4core.percent(25);
+          heatLegend.width = am4core.percent(29);
           heatLegend.paddingLeft = 20;
           heatLegend.valueAxis.renderer.labels.template.fontSize = 9;
+          heatLegend.stroke = am4core.color('#FF8C8A');
+
 
           // Create hover state and set alternative fill color
           var hs = polygonTemplate.states.create("hover");
-          hs.properties.fill = am4core.color("#3c5bdc");
+          hs.properties.fill = am4core.color("#ff5c00");
 
         }
         ) })
@@ -691,8 +695,8 @@ $(document).ready(function()
             polygonSeries.heatRules.push({
               property: "fill",
               target: polygonSeries.mapPolygons.template,
-              min: chart.colors.getIndex(20).brighten(1),
-              max: chart.colors.getIndex(20).brighten(-0.3)
+              min: chart.colors.getIndex(65).brighten(1),
+              max: chart.colors.getIndex(65).brighten(-0.5)
             });
   
             // Make map load polygon data (state shapes and names) from GeoJSON
@@ -855,20 +859,25 @@ $(document).ready(function()
             polygonTemplate.strokeWidth = 0.5;
   
             var heatLegend = chart.createChild(am4charts.HeatLegend);
-            heatLegend.minColor = am4core.color("#F5DBCB");
-            heatLegend.maxColor = am4core.color("#ED7B84");
+            heatLegend.minColor = am4core.color("#FFACFF");
+            heatLegend.maxColor = am4core.color("#7C208C");
             heatLegend.minValue = 0;
             heatLegend.maxValue = 2;
             heatLegend.valign = "bottom" ;
             heatLegend.markerContainer.height =10;
             heatLegend.markerCount = 2;
-            heatLegend.width = am4core.percent(25);
+            heatLegend.width = am4core.percent(29);
+            heatLegend.marginLeft = 30;
             heatLegend.paddingLeft = 20;
+            heatLegend.paddingTop = 40;
             heatLegend.valueAxis.renderer.labels.template.fontSize = 9;
+            heatLegend.stroke = am4core.color('#FFACFF');
+            
+
   
             // Create hover state and set alternative fill color
             var hs = polygonTemplate.states.create("hover");
-            hs.properties.fill = am4core.color("#3c5bdc");
+            hs.properties.fill = am4core.color("#ff00ff");
   
           }
           ) })

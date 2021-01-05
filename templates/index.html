@@ -20,28 +20,29 @@
 
     <script src="https://www.amcharts.com/lib/4/core.js"></script>
     <script src="//www.amcharts.com/lib/4/charts.js"></script>
-    
+    <script src="countUp.js"></script>
 	<script src="https://www.amcharts.com/lib/4/maps.js"></script>
 	<script src="https://www.amcharts.com/lib/4/geodata/india2019High.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-    <link rel="stylesheet" href="../static/heatmap.css">
+    <!-- <link rel="stylesheet" href="../static/heatmap.css"> -->
 
     <link rel="stylesheet" href="static/style.css">
     
     <title>Document</title>
 </head>
 
-<header class="header" id="header">
-    <div class="header__toggle">
-        <i class='bx bx-menu' id="header-toggle"></i>
-    </div>
 
-    <!-- <div class="header__img">
-        <img src="assets/img/perfil.jpg" alt="">
-    </div> -->
-</header>
 <body id="body-pd">
   
+    <header class="header" id="header">
+        <div class="header__toggle">
+            <i class='bx bx-menu' id="header-toggle"></i>
+        </div>
+    
+        <!-- <div class="header__img">
+            <img src="assets/img/perfil.jpg" alt="">
+        </div> -->
+    </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div>
@@ -49,12 +50,12 @@
 
                 <div class="nav__list">
                     
-                    <a href="#" class="nav__link active">
+                    <a href="#dashboard" class="nav__link active">
                         <i class="fas fa-chart-line"></i>
                         <span class="nav__name">Dashboard</span>
                     </a>
 
-                    <a href="#" class="nav__link">
+                    <a href="#maps" class="nav__link">
                         <i class="fas fa-map-marker-alt"></i>
                         <span class="nav__name">Heat Maps</span>
                     </a>
@@ -79,7 +80,7 @@
     </div>
 
   
-  <section>
+  <section id="dashboard">
   <main>
     <div class="main__container">
         <div class="main__title">
@@ -89,6 +90,40 @@
             </div>
         </div>
         <div class="table1" >
+            <div class="table__right">
+                <div class="table__right__title">
+                    <div>
+                        <h1>
+                            Stats
+                        </h1>
+                    </div>
+                </div>
+
+            <div class="table__right__cards">
+                <div class="card1">
+                    <h1>Active</h1>
+                    <p id = "active"></p>
+                </div>
+                <div class="card2">
+                    <h1>Confirmed</h1>
+                    <p id = confirmed></p>
+                </div>
+                <div class="card3">
+                    <h1>Recovered</h1>
+                    <p id="recovered"></p>
+                </div>
+                <div class="card4">
+                    <h1>Deceased</h1>
+                    <p id = "deceased"></p>
+                </div>
+            </div>
+            <div class="charts1">
+<canvas id="myChart1" width="400" height="400px " style="position: relative;"></canvas></div>
+<canvas id="myChart2" width="400" height="400px"style="position: relative;"></canvas>
+<canvas id="myChart3" width="400" height="400px"style="position: relative;"></canvas>
+
+
+            </div>
             <div class="table__left" style="overflow-x:scroll">
                 <table class="container" id = "table" >
                     <thead>
@@ -190,61 +225,38 @@
                 </table>
                 
             </div>
-            <div class="table__right">
-                <div class="table__right__title">
-                    <div>
-                        <h1>
-                            Stats
-                        </h1>
-                    </div>
-                </div>
-
-            <div class="table__right__cards">
-                <div class="card1">
-                    <h1>Active</h1>
-                    <p>23,000</p>
-                </div>
-                <div class="card2">
-                    <h1>Confirmed</h1>
-                    <p>23,000</p>
-                </div>
-                <div class="card3">
-                    <h1>Recovered</h1>
-                    <p>23,000</p>
-                </div>
-                <div class="card4">
-                    <h1>Deceased</h1>
-                    <p>23,000</p>
-                </div>
-            </div>
-            <div class="charts1">
-<canvas id="myChart1" width="400" height="400px " style="position: relative;"></canvas></div>
-<canvas id="myChart2" width="400" height="400px"style="position: relative;"></canvas>
-<canvas id="myChart3" width="400" height="400px"style="position: relative;"></canvas>
-
-
-            </div>
+            
         </div>
     </div>
 </main>
 
 </section>
 
-<section>
+<section id = "maps">
+    <h1>Vulnerability index</h1>
+    <p>0: Minimum vulnerability</p><p>1: Average vulnerability</p><p>2: Maximum vulnerability</p>
+    <p>* Details of some states are unavailable</p>
+
+
     <div class="container1">
         <div class="filterDiv">
+            <h2>Active</h2>
             <div id="chartdiv1"></div>
            
             
 
         </div>
         <div class="filterDiv ">
+            <h2>Health Workers</h2>
+
             <div id="chartdiv2"></div>
            
             
 
         </div>
         <div class="filterDiv ">
+            <h2>School children</h2>
+
             <div id="chartdiv3"></div>
            
             
@@ -252,6 +264,8 @@
         </div>
     
     <div class="filterDiv ">
+        <h2>People aged above 50</h2>
+
         <div id="chartdiv4"></div>
        
         
@@ -273,6 +287,7 @@
     <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
     <script src="https://www.amcharts.com/lib/3/serial.js"></script>
     <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous"></script>
 </body>
 </html>
