@@ -571,6 +571,20 @@ transition-timing-function: line; */
   
 }
 
+footer {
+  
+  /* left: 0 !important; */
+  
+  bottom: 0 !important;
+  width: 100% !important;
+  margin-top: 100px;
+  /* margin-left: 10; */
+  height: 100px;
+  background-color: #171E64;
+  color: #A4A8CD;
+  text-align: center;
+}
+
 @media only screen and (max-width:1170px) and ( min-width: 626px){
   .table1{
       grid-template-columns: 1fr;
