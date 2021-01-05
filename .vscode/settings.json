@@ -1,3 +1,12 @@
 {
+<<<<<<< HEAD
     "liveServer.settings.port": 5501
+=======
+    "liveServer.settings.port": 5501,
+<<<<<<< HEAD
+    "python.pythonPath": "C:\\Users\\USER\\anaconda3\\python.exe"
+=======
+    "python.pythonPath": "C:\\Users\\AKSHAY\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
+>>>>>>> 570050f0eb0dbd40cb999fc3d02a2f8c9351b364
+>>>>>>> f4e3e26a698cae36da383701f1c3ae7f912ed9b1
 }
