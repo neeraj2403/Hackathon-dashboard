@@ -145,7 +145,7 @@ def priority():
     
     if request.method == 'POST':
            state_selected = request.form['state']
-           print(state_selected,flush=True)
+           
            for i in phase1_state:
             if i['State']==state_selected:
                     state_selected_ph1 = i
