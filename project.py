@@ -229,7 +229,7 @@ def priority():
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("form.html")
 
 @app.route("/data")
 def data():
