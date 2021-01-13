@@ -226,6 +226,84 @@ def priority():
     )
 
 
+@app.route('/form', methods=('GET', 'POST'))
+def forms():
+        day= None
+        if request.method == 'POST':
+                username = request.form['name']
+                state_sel = request.form['State']
+                age= request.form['Age']
+                occ= request.form['occupation']
+                if occ =='Frontline Workers/Hospital Workers':
+                        for i in phase1_state:
+                                if i['State']==state_sel:
+                                        if i['index']==0:
+                                                day=0
+                                        if i['index']==1:
+                                                day=11
+                                        if i['index']==2:
+                                                day=17
+
+            
+                if occ =='Other Jobs':
+                        if age > 80:
+                                for i in phase2_state_80:
+                                        if i['State']==state_sel:
+                                                if i['index']==0:
+                                                        day=24
+                                                if i['index']==1:
+                                                        day=29
+                                                if i['index']==2:
+                                                        day=33
+                        if age in range(70,80):
+                                for i in phase2_state_70_80:
+                                        if i['State']==state_sel:
+                                                if i['index']==0:
+                                                        day=37
+                                                if i['index']==1:
+                                                        day=48
+                                                if i['index']==2:
+                                                        day=60
+                        if age in range(60,70):
+                                for i in phase2_state_60_70:
+                                        if i['State']==state_sel:
+                                                if i['index']==0:
+                                                        day=69
+                                                if i['index']==1:
+                                                        day=97
+                                                if i['index']==2:
+                                                        day=120
+                        if age in range(50,60):
+                                for i in phase2_state_50_60:
+                                        if i['State']==state_sel:
+                                                if i['index']==0:
+                                                        day=152
+                                                if i['index']==1:
+                                                        day=191
+                                                if i['index']==2:
+                                                        day=229
+                        if age in range(15,20):
+                                for i in phase3_state_15_19:
+                                        if i['State']==state_sel:
+                                                if i['index']==0:
+                                                        day=152
+                                                if i['index']==1:
+                                                        day=191
+                                                if i['index']==2:
+                                                        day=229
+                        if age in range(20,50):
+                                for i in phase2_state_50_60:
+                                        if i['State']==state_sel:
+                                                if i['index']==0:
+                                                        day=268
+                                                if i['index']==1:
+                                                        day=325
+                                                if i['index']==2:
+                                                        day=373
+                                                                                                                         
+        
+        return render_template('form.html', day=day)
+
 
 @app.route("/")
 def index():
