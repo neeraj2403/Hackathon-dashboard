@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <div>
+        <p>Name : {{username }}</p>
+        <p>State : {{state_sel}}</p>				
+        <p>Age : {{age}}</p>
+        <p>You will receive vaccination after {{day1}} day from the start of vaccination in the country</p>
+        <button id = "btn"  class="btn btn-primary" type="submit">
+           Submit
+          </button>					
+    </div>
+
+    
+    <script type="text/javascript">
+        document.getElementById("btn").onclick = function () {
+            location.href = "/form";
+        };
+    </script>
+    
+</body>
+</html>

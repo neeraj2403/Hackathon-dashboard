@@ -98,6 +98,7 @@ def priority():
     phase1_0_day= phase1_india_json['no of days_health care']['0']
     phase1_1_day= phase1_india_json['no of days_health care']['1']
     phase1_2_day= phase1_india_json['no of days_health care']['2']
+    print(phase1_0_day,flush=True)
     
 
 
@@ -226,14 +227,113 @@ def priority():
     )
 
 
+
+
+
 @app.route('/form', methods=('GET', 'POST'))
+
 def forms():
-        day= None
+        # day = 0
+        # print(day,flush=True)
+        # if request.method == 'POST':
+        #         username = request.form['name']
+        #         state_sel = request.form['State']
+        #         age= request.form.get('Age',type=int)
+                
+             
+
+        #         occ= request.form['occupation']
+        #         print(username,state_sel,age,flush=True)
+                
+        #         if occ =='Frontline Workers/Hospital Workers':
+        #                 for i in phase1_state:
+        #                         if i['State']==state_sel:
+        #                                 if i['index']==0:
+        #                                         day=0
+        #                                 if i['index']==1:
+        #                                         day=11
+        #                                 if i['index']==2:
+        #                                         day=17
+        #                 print(day,flush=True)
+                                
+
+            
+        #         if occ =='Other Jobs':
+        #                 if age > 80:
+        #                         for i in phase2_state_80:
+        #                                 if i['State']==state_sel:
+        #                                         if i['index']==0:
+        #                                                 day=24
+        #                                         if i['index']==1:
+        #                                                 day=29
+        #                                         if i['index']==2:
+        #                                                 day=33
+        #                         print(day,flush=True)
+                                
+        #                 if age in range(70,80):
+        #                         for i in phase2_state_70_80:
+        #                                 if i['State']==state_sel:
+        #                                         if i['index']==0:
+        #                                                 day=37
+        #                                         if i['index']==1:
+        #                                                 day=48
+        #                                         if i['index']==2:
+        #                                                 day=60
+        #                         print(day,flush=True)
+                                
+        #                 if age in range(60,70):
+        #                         for i in phase2_state_60_70:
+        #                                 if i['State']==state_sel:
+        #                                         if i['index']==0:
+        #                                                 day=69
+        #                                         if i['index']==1:
+        #                                                 day=97
+        #                                         if i['index']==2:
+        #                                                 day=120
+        #                 if age in range(50,60):
+        #                         for i in phase2_state_50_60:
+        #                                 if i['State']==state_sel:
+        #                                         if i['index']==0:
+        #                                                 day=152
+        #                                         if i['index']==1:
+        #                                                 day=191
+        #                                         if i['index']==2:
+        #                                                 day=229
+        #                 if age in range(15,20):
+        #                         for i in phase3_state_15_19:
+        #                                 if i['State']==state_sel:
+        #                                         if i['index']==0:
+        #                                                 day=152
+        #                                         if i['index']==1:
+        #                                                 day=191
+        #                                         if i['index']==2:
+        #                                                 day=229
+        #                 if age in range(20,50):
+        #                         for i in phase2_state_50_60:
+        #                                 if i['State']==state_sel:
+        #                                         if i['index']==0:
+        #                                                 day=268
+        #                                         if i['index']==1:
+        #                                                 day=325
+        #                                         if i['index']==2:
+        #                                                 day=373
+                                                                                                                         
+        
+        return render_template('form.html',states=active_vulnerability_index_json['index'])
+@app.route('/display', methods=('GET', 'POST'))
+def display():        
+        day = 0
+        print(day,flush=True)
         if request.method == 'POST':
                 username = request.form['name']
                 state_sel = request.form['State']
-                age= request.form['Age']
+                age= request.form.get('Age',type=int)
+                
+             
+
                 occ= request.form['occupation']
+                print(username,state_sel,age,flush=True)
+                
                 if occ =='Frontline Workers/Hospital Workers':
                         for i in phase1_state:
                                 if i['State']==state_sel:
@@ -243,6 +343,8 @@ def forms():
                                                 day=11
                                         if i['index']==2:
                                                 day=17
+                        print(day,flush=True)
+                                
 
             
                 if occ =='Other Jobs':
@@ -255,6 +357,8 @@ def forms():
                                                         day=29
                                                 if i['index']==2:
                                                         day=33
+                                print(day,flush=True)
+                                
                         if age in range(70,80):
                                 for i in phase2_state_70_80:
                                         if i['State']==state_sel:
@@ -264,6 +368,8 @@ def forms():
                                                         day=48
                                                 if i['index']==2:
                                                         day=60
+                                print(day,flush=True)
+                                
                         if age in range(60,70):
                                 for i in phase2_state_60_70:
                                         if i['State']==state_sel:
@@ -300,9 +406,11 @@ def forms():
                                                         day=325
                                                 if i['index']==2:
                                                         day=373
-                                                                                                                         
-        
-        return render_template('form.html', day=day)
+        print(day,flush=True)
+        def ord(day):
+                return str(day)+("th" if 4<=day%100<=20 else {1:"st",2:"nd",3:"rd"}.get(day%10, "th"))
+        day1 = ord(day)         
+        return render_template('display.html',day1 = day1,username = username,state_sel = state_sel,age = age)
 
 
 @app.route("/")

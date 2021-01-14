@@ -36,26 +36,37 @@
     /*==================================================================
     [ Validate ]*/
     var name = $('.validate-input input[name="name"]');
-    var email = $('.validate-input input[name="email"]');
-    var message = $('.validate-input textarea[name="message"]');
+    var Age = $('.validate-input input[name="Age"]');
+    var occupation = $('.validate-input textarea[name="occupation"]');
+    var state = $('.validate-input textarea[name="state"]');
 
+    
 
     $('.validate-form').on('submit',function(){
         var check = true;
+        // $('.modal').modal('show',function(e){
 
+        //  e.preventDefault();
+
+        // });
+        //  e.preventDefault();
         if($(name).val().trim() == ''){
             showValidate(name);
             check=false;
         }
 
 
-        if($(email).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-            showValidate(email);
+        if($(Age).val().trim() == '') {
+            showValidate(Age);
             check=false;
         }
 
-        if($(message).val().trim() == ''){
-            showValidate(message);
+        if($(occupation).val().trim() == ''){
+            showValidate(occupation);
+            check=false;
+        }
+        if($(state).val().trim() == ''){
+            showValidate(state);
             check=false;
         }
 
