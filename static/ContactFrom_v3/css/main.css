@@ -26,20 +26,21 @@
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
-* {
-	margin: 0px; 
-	padding: 0px; 
-	box-sizing: border-box;
-}
+/* * {
+	
+  background-color: #171E64;
+  
+} */
 
-body, html {
-	height: 100%;
-	/* font-family: Poppins-Regular, sans-serif; */
-}
+/* body, html {
+  height: 100%;
+  background-color: #171E64;
+  
+} */
 
 /*---------------------------------------------*/
 a {
-	font-family: Poppins-Regular;
+	/* font-family: Poppins-Regular; */
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -56,7 +57,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-	color: #57b846;
+	/* color: #57b846; */
 }
 
 /*---------------------------------------------*/
@@ -65,7 +66,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	font-family: Poppins-Regular;
+	/* font-family: Poppins-Regular; */
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -105,13 +106,15 @@ textarea::-moz-placeholder { color: rgba(255,255,255,0.8);}
 textarea:-ms-input-placeholder { color: rgba(255,255,255,0.8);}
 
 /*---------------------------------------------*/
-button {
+.button {
 	outline: none !important;
 	border: none;
-	background: transparent;
+  /* background: white;
+  padding: 10px;
+  border-radius: 5px; */
 }
 
-button:hover {
+.button:hover {
 	cursor: pointer;
 }
 
@@ -127,12 +130,14 @@ iframe {
 [ Contact 2 ]*/
 .bg-contact3 {
   width: 100%;  
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  /* background-repeat: no-repeat; */
+  /* background-position: center center; */
+  /* background-size: cover; */
 }
 
 .container-contact3 {
+  margin-top: 100px;
+  margin-bottom: 100px;
   width: 100%;  
   min-height: 100vh;
   display: -webkit-box;
@@ -144,20 +149,24 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: transparent;
+  background-color: #171E64;
+  
   
 }
-
+.contact3-form1{
+  color: #fff;
+}
 .wrap-contact3 {
-  width: 500px;
+  width: 450px;
   background: #171E64;
-  background: -webkit-linear-gradient(45deg, #171E64, #32289B);
-  background: -o-linear-gradient(45deg, #171E64, #32289B);
-  background: -moz-linear-gradient(45deg, #171E64, #32289B);
-  background: linear-gradient(45deg, #171E64, #32289B);
+  background: -webkit-linear-gradient(45deg,#EC336B, #171E64 );
+  background: -o-linear-gradient(45deg,#EC336B, #171E64);
+  background: -moz-linear-gradient(45deg,#EC336B, #171E64);
+  background: linear-gradient(45deg, #EC336B, #171E64);
   border-radius: 10px;
   overflow: hidden;
   padding: 72px 55px 65px 55px;
+  
 }
 
 
@@ -170,7 +179,7 @@ iframe {
 
 .contact3-form-title {
   display: block;
-  font-family: Poppins-Bold;
+  /* font-family: Poppins-Bold; */
   font-size: 39px;
   color: #fff;
   line-height: 1.2;
@@ -195,7 +204,7 @@ iframe {
   display: block;
   width: 100%;
   background: transparent;
-  font-family: Poppins-Regular;
+  /* font-family: Poppins-Regular; */
   font-size: 15px;
   color: #fff;
   line-height: 1.2;
@@ -257,12 +266,12 @@ textarea.input3 {
   padding-top: 23px;
 }
 
-.contact3-form-btn {
-  font-family: Poppins-Medium;
-  font-size: 16px;
+.button {
+  /* font-family: Poppins-Medium; */
+  font-size: 15px;
   color: #555555;
   line-height: 1.2;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -271,9 +280,9 @@ textarea.input3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 15px;
-  min-width: 120px;
-  height: 50px;
+  padding: 0 10px;
+  min-width: 80px;
+  height: 40px;
   border-radius: 2px;
   position: relative;
   z-index: 1;
@@ -289,7 +298,7 @@ textarea.input3 {
   transition: all 0.4s;
 }
 
-.contact3-form-btn::before {
+.button::before {
   content: "";
   display: block;
   position: absolute;
@@ -307,11 +316,11 @@ textarea.input3 {
   transition: all 0.4s;
 }
 
-.contact3-form-btn:hover {
+.button:hover {
   color: #fff;
 }
 
-.contact3-form-btn:hover:before {
+.button:hover:before {
   opacity: 0;
 }
 
