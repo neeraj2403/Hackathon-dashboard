@@ -389,7 +389,7 @@ def display():
                                                 if i['index']==2:
                                                         day=229
                         if age in range(15,20):
-                                for i in phase3_state_15_19:
+                                for i in phase3:
                                         if i['State']==state_sel:
                                                 if i['index']==0:
                                                         day=152
