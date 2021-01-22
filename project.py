@@ -5,9 +5,18 @@ import math
 
 
 from pymongo import MongoClient
+import json
+
+with open('./Datasets/vaccination', 'r') as file:
+  data = json.load(file)
 
 
-    
+
+# here
+
+
+
+
   
 # import modules
 from modules.mongo import connect
