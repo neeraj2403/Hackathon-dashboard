@@ -340,7 +340,16 @@ def display():
         if request.method == 'POST':
                 username = request.form['name']
                 state_sel = request.form['State']
+<<<<<<< HEAD
                 age= request.form.get('Age',type=int)          
+=======
+                age= request.form.get('Age',type=int)
+                lat=request.form('lat')
+                print(lat,flush=True)
+                
+             
+
+>>>>>>> 99854883cd3383be57e58e5967c06fc5040459f9
                 occ= request.form['occupation']
                 print(username,state_sel,age,flush=True)
                 

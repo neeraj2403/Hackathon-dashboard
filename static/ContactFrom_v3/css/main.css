@@ -157,7 +157,7 @@ iframe {
   color: #fff;
 }
 .wrap-contact3 {
-  width: 450px;
+  /* width: 40px; */
   background: #171E64;
   background: -webkit-linear-gradient(45deg,#EC336B, #171E64 );
   background: -o-linear-gradient(45deg,#EC336B, #171E64);
@@ -166,9 +166,16 @@ iframe {
   border-radius: 10px;
   overflow: hidden;
   padding: 72px 55px 65px 55px;
+  /* margin-top: 30px;
+  margin-bottom: 30px; */
   
 }
 
+.divide{
+  display: grid;
+  grid-template-columns: 0.65fr 1fr;
+  /* height: 500px; */
+}
 
 /*------------------------------------------------------------------
 [  ]*/

@@ -30,8 +30,41 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
 	<script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-replace-svg="nest"></script>
-
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet-src.js"></script> 
+	<script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/0.0.1-beta.5/esri-leaflet-core.js"></script> 
+ 
+    <!-- Esri Leaflet Geocoder -->
+    <script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.4/esri-leaflet-geocoder.js"></script> 
+    <link rel="stylesheet" type="text/css" href="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.3/esri-leaflet-geocoder.css">
 <!--===============================================================================================-->
+<style>
+   
+    #map {
+      width: 100%;
+      height: 100%;
+      z-index:100;
+    }
+    #mapSearchContainer{
+      position:fixed;
+      top:20px;
+      right: 40px;
+      height:30px;
+      width:180px;
+      z-index:110;
+      font-size:10pt;
+      color:#5d5d5d;
+      border:solid 1px #bbb;
+      background-color:#f8f8f8;
+    }
+    .pointer{
+      position:absolute;
+      top:86px;
+      left:60px;
+      z-index:99999;
+    }
+  </style>
+
 </head>
 <body id = "body-pd">
 
@@ -83,7 +116,7 @@
     </div>
 
 	<!-- <div class="bg-contact3" style="background-image: url('images/bg-01.jpg');"> -->
-		<div class="container-contact3">
+		<div class="divide">
 			<div class="wrap-contact3">
 				
 				<form class="contact3-form validate-form" action="/display" method="POST" >
@@ -213,6 +246,8 @@
 			
 			
 			</div>
+  			<div id="map"></div>
+
 		</div>
 	<!-- </div> -->
 
@@ -254,5 +289,44 @@
   gtag('config', 'UA-23581568-13');
 </script>
 
+<script>
+	// Initialize the map and assign it to a variable for later use
+	var map = L.map('map', {
+		// Set latitude and longitude of the map center (required)
+		center: [10.8505, 76.2711],
+		// Set the initial zoom level, values 0-18, where 0 is most zoomed-out (required)
+		zoom: 5
+	});
+	
+	console.log(map);
+	L.control.scale().addTo(map);
+	
+	// Create a Tile Layer and add it to the map
+	//var tiles = new L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png').addTo(map);
+	L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+		minZoom: 4,
+    	maxZoom: 10
+	  }).addTo(map);
+	  console.log(map);
+	  //(passiveSupported && (active || el == window.document || el == window.document.body || el == window)) ? el.addEventListener(name, fn, { passive: false, capture: bubble }) : el.addEventListener(name, fn, bubble || false); -->
+	  
+	  var searchControl = new L.esri.Controls.Geosearch().addTo(map);
+	
+	  var results = new L.LayerGroup().addTo(map);
+	  
+	
+	  searchControl.on('results', function(data){
+		
+		results.clearLayers();
+		for (var i = data.results.length - 1; i >= 0; i--) {
+		  results.addLayer(L.marker(data.results[i].latlng));
+		  console.log(data.results[i].latlng.lat);
+		}
+		
+	  });
+	
+	//setTimeout(function(){$('.pointer').fadeOut('slow');},3400);
+	</script>
 </body>
 </html>
