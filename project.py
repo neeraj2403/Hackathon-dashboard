@@ -342,6 +342,8 @@ def display():
                 username = request.form['name']
                 state_sel = request.form['State']
                 age= request.form.get('Age',type=int)
+                lat=request.form.get('lat')
+                print(lat,flush=True)
                 
              
 
