@@ -3,7 +3,21 @@ from flask import Flask, render_template , request
 import json
 import math
 
+
+from pymongo import MongoClient
+
+
+    
+  
+# import modules
+from modules.mongo import connect
+
 app= Flask(__name__)
+
+
+client=connect()
+print(client, flush=True)
+
 
 
 
