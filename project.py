@@ -331,6 +331,7 @@ def forms():
         #                                                 day=325
         #                                         if i['index']==2:
         #                                                 day=373
+                                                                                                                         
         
         return render_template('form.html',states=active_vulnerability_index_json['index'])
 @app.route('/display', methods=('GET', 'POST'))
@@ -340,16 +341,12 @@ def display():
         if request.method == 'POST':
                 username = request.form['name']
                 state_sel = request.form['State']
-<<<<<<< HEAD
-                age= request.form.get('Age',type=int)          
-=======
                 age= request.form.get('Age',type=int)
                 lat=request.form('lat')
                 print(lat,flush=True)
                 
              
 
->>>>>>> 99854883cd3383be57e58e5967c06fc5040459f9
                 occ= request.form['occupation']
                 print(username,state_sel,age,flush=True)
                 
@@ -428,17 +425,7 @@ def display():
         print(day,flush=True)
         def ord(day):
                 return str(day)+("th" if 4<=day%100<=20 else {1:"st",2:"nd",3:"rd"}.get(day%10, "th"))
-        day1 = ord(day)  
-        if request.method == 'POST':
-
-                print(request.form)                                                                                                                 
-                user = {
-                        "name" :username,
-                        "age":age,
-                        "occ":occ,
-                        "state":state_sel
-                }
-                client.registration.insert_one(user)       
+        day1 = ord(day)         
         return render_template('display.html',day1 = day1,username = username,state_sel = state_sel,age = age)
 
 
