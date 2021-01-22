@@ -105,7 +105,8 @@ a{
   justify-content: space-between;
   padding: 0 1rem;
   background-color: #171E64;
-  z-index: var(--z-fixed);
+  /* z-index: var(--z-fixed); */
+  z-index: 1000;
   transition: .5s;
 }
 
@@ -138,7 +139,8 @@ a{
   background-color: var(--first-color);
   padding: .5rem 1rem 0 0;
   transition: .5s;
-  z-index: var(--z-fixed);
+  /* z-index: var(--z-fixed); */
+  z-index: 1500;
 }
 
 .nav{
