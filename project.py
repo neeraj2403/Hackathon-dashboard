@@ -528,5 +528,10 @@ def center_list():
         return jsonify(data_center_vaccination)
 
 
+@app.route('/center')
+def center_route():
+       return  render_template('district.html')
+
+
 if __name__=='__main__':
     app.run(debug=True)
