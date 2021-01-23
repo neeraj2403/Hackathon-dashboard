@@ -180,7 +180,30 @@ iframe {
   margin-bottom: 7%;
   /* height: 500px; */
 }
-
+#map {
+  width: 100%;
+  height: 100%;
+/* z-index:100; */
+/* overflow: hidden; */
+}
+#mapSearchContainer{
+  position:fixed;
+  top:20px;
+  right: 40px;
+  height:30px;
+  width:180px;
+  /* z-index:110; */
+  font-size:10pt;
+  color:#5d5d5d;
+  border:solid 1px #bbb;
+  background-color:#f8f8f8;
+}
+.pointer{
+  position:absolute;
+  top:86px;
+  left:60px;
+  
+}
 /*------------------------------------------------------------------
 [  ]*/
 
@@ -616,9 +639,16 @@ textarea.input3 {
 
 @media only screen and (max-width:1000px){
   .divide{
-    display: grid;
     grid-template-columns: 1fr;
+    grid-template-areas: "form map";
   }
+#map{
+  grid-area: map;
+  height: 600px;
+}
+.wrap-contact3{
+  grid-area: form;
+}
 
 }
 
