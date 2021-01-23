@@ -1,23 +1,11 @@
 
-$(document).ready(function()
-{
-  var url = "../Datasets/vaccination"
-  $.getJSON(url,function(data)
-    {
-        var center = []
-        $.each(data,function(id,obj)
-          {
-            center.push(obj.Vaccination)
-
-
-            
-            
-          })
-
-          console.log(center)
+    $.getJSON("../Datasets/vaccination.json", function(json) {
+        console.log(json); // this will show the info it in firebug console
+        var obj = JSON.parse(json);
+        console.log(obj)
     });
 
-});
+
 
 
 
@@ -120,3 +108,4 @@ var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla"
       }
 
       autocomplete(document.getElementById("myInput"), countries);
+
