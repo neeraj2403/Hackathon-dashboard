@@ -7,33 +7,45 @@ import math
 from pymongo import MongoClient
 import json
 
-with open('./Datasets/vaccination', 'r') as file:
-  data = json.load(file)
-data1 = json.dumps(data, indent=2)
 
-for i in data:
+
+
+
+
+with open('./Datasets/vaccination', 'r') as file:
+  data_center_vaccination = json.load(file)
+
+
+for i in data_center_vaccination:
    i['dis']=0
-   #print(i)
-#print(data)
+
 
 def calcDist(lat,long):
-        for i in data:
+        
+        for i in data_center_vaccination:
                 dist=math.sqrt(abs((long-i['Longitude'])**2-(lat-i['Latitude'])**2))
                 i['dis']=dist
-calcDist(11.8791852,75.3564569)
-data1 = json.dumps(data, indent=2)
-print(data1)
+        
+        a=[]
+        for i in data_center_vaccination:
+                a.append(i['dis'])
+        a.sort() 
+        for i in data_center_vaccination:
+                if(a[0]==i['dis']):
+                        return i['Vaccination']
 
-a=[]
-for i in data:
-        a.append(i['dis'])
 
-a.sort()        
-print(a)
 
-for i in data:
-        if(a[0]==i['dis']):
-             print(i['Vaccination'])
+
+center = calcDist(10.053217879640254, 76.31975408889113)
+print(center)
+
+
+
+       
+
+
+
         
 
   
@@ -48,7 +60,7 @@ app= Flask(__name__)
 
 
 client=connect()
-print(client, flush=True)
+client=client.registration
 
 
 
@@ -374,15 +386,20 @@ def display():
                 username = request.form['name']
                 state_sel = request.form['State']
                 age= request.form.get('Age',type=int)
-                lat=request.form('lat')
+                lat=request.form.get('lat',type=float)
+                lon = request.form.get('lon',type=float)
                 print(lat,flush=True)
+
+
+
+
                 
              
 
                 occ= request.form['occupation']
                 print(username,state_sel,age,flush=True)
                 
-                if occ =='Frontline Workers/Hospital Workers':
+                if occ in ['Hospital Workers' ,'Indian Army / Navy / Airforce ' ,'Police / Fire Force / Home Gaurd' , 'Asha Workers'] :
                         for i in phase1_state:
                                 if i['State']==state_sel:
                                         if i['index']==0:
@@ -395,7 +412,7 @@ def display():
                                 
 
             
-                if occ =='Other Jobs':
+                if occ =='Other Jobs' or occ =='Students':
                         if age > 80:
                                 for i in phase2_state_80:
                                         if i['State']==state_sel:
@@ -457,7 +474,25 @@ def display():
         print(day,flush=True)
         def ord(day):
                 return str(day)+("th" if 4<=day%100<=20 else {1:"st",2:"nd",3:"rd"}.get(day%10, "th"))
-        day1 = ord(day)         
+        day1 = ord(day)    
+        center = ''  
+        center=calcDist(lat,lon)   
+
+
+        user = {
+                'name': username,
+                'state':state_sel,
+                'age': age,
+                'occupation':occ,
+                'day': day1,
+                'center': center
+
+        }
+        client.insert_one(user)
+
+
+
+
         return render_template('display.html',day1 = day1,username = username,state_sel = state_sel,age = age)
 
 
