@@ -9,6 +9,3 @@ def connect():
     return client
 
 
-
-
-  

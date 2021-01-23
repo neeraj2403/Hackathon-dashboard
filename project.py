@@ -5,9 +5,41 @@ import math
 
 
 from pymongo import MongoClient
+import json
+
+with open('./Datasets/vaccination', 'r') as file:
+  data = json.load(file)
+data1 = json.dumps(data, indent=2)
+
+for i in data:
+   i['dis']=0
+   #print(i)
+#print(data)
+
+def calcDist(lat,long):
+        for i in data:
+                dist=math.sqrt(abs((long-i['Longitude'])**2-(lat-i['Latitude'])**2))
+                i['dis']=dist
+calcDist(11.8791852,75.3564569)
+data1 = json.dumps(data, indent=2)
+print(data1)
+
+a=[]
+for i in data:
+        a.append(i['dis'])
+
+a.sort()        
+print(a)
+
+for i in data:
+        if(a[0]==i['dis']):
+             print(i['Vaccination'])
+        
+
+  
 
 
-    
+
   
 # import modules
 from modules.mongo import connect
