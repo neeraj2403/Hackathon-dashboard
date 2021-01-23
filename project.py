@@ -1,18 +1,18 @@
-from flask import Flask, render_template , request
+from flask import Flask, render_template , request,jsonify
 
 import json
 import math
 
 
 from pymongo import MongoClient
-import json
+import json 
 
 
 
 
 
 
-with open('./Datasets/vaccination', 'r') as file:
+with open('./Datasets/vaccination') as file:
   data_center_vaccination = json.load(file)
 
 
@@ -519,6 +519,14 @@ def school():
 def fiftyplus():
 
     return fiftyplus_json
+
+
+
+# vaccination center
+@app.route('/centerlist')
+def center_list():
+        return jsonify(data_center_vaccination)
+
 
 if __name__=='__main__':
     app.run(debug=True)
