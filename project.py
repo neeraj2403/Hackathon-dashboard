@@ -493,7 +493,7 @@ def display():
 
 
 
-        return render_template('display.html',day1 = day1,username = username,state_sel = state_sel,age = age)
+        return render_template('display.html',day1 = day1,username = username,state_sel = state_sel,age = age , center = center)
 
 
 @app.route("/")
