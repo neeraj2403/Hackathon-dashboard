@@ -10,22 +10,178 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../static/vaccine.css">
 	<link rel="stylesheet" href="../static/style.css">
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	
+	<link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	
+	<script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-replace-svg="nest"></script>
 
     <title>Document</title>
 </head>
-<body>
+<body id = "body-pd">
+
+    <header class="header" id="header">
+        <div class="header__toggle">
+            <i class='bx bx-menu' id="header-toggle"></i>
+        </div>
+    
+        <!-- <div class="header__img">
+            <img src="assets/img/perfil.jpg" alt="">
+        </div> -->
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                
+
+                <div class="nav__list">
+                    
+                    <a href="/" class="nav__link">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="nav__name">Dashboard</span>
+                    </a>
+
+                    <a href="/#maps" class="nav__link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span class="nav__name">Heat Maps</span>
+                    </a>
+                    
+                    <a href="priority" class="nav__link">
+                        <i class="fas fa-viruses"></i>
+
+                        <span class="nav__name">Predictions</span>
+                    </a>
+                    
+					<a href="form" class="nav__link active">
+                        <i class="fab fa-wpforms"></i>
+
+                        <span class="nav__name">Survey Form</span>
+                    </a>
 
 
+                    
+
+                    
+                </div>
+            </div>
+        </nav>
+    </div>
     <form class = "form" autocomplete="off" action="/action_page.php">
         <div class="autocomplete">
-          <input id="myInput" type="text" name="myCountry" placeholder="Country">
+          <input id="myInput" type="text" name="myCountry" placeholder="Select Center">
         </div>
         <input type="submit">
       </form>
+
+<h1></h1>
+      <div class="table2" style="overflow-x:scroll">
+        <table class="container3" id = "table" >
+            <thead>
+                <tr>
+                    <th><h1>Name</h1></th>
+                    <th><h1>Age</h1></th>
+                    <th><h1>Occupation</h1></th>
+                    <th><h1>State</h1></th>
+                    <th><h1>Day</h1></th>
+
+                </tr>
+            </thead>
+            <!-- <tbody>
+                <tr>
+                    <td>Google</td>
+                    <td>9518</td>
+                    <td>6369</td>
+                    <td>01:32:50</td>
+                </tr>
+                <tr>
+                    <td>Google</td>
+                    <td>9518</td>
+                    <td>6369</td>
+                    <td>01:32:50</td>
+                </tr>
+                <tr>
+                    <td>Google</td>
+                    <td>9518</td>
+                    <td>6369</td>
+                    <td>01:32:50</td>
+                </tr>
+                <tr>
+                    <td>Google</td>
+                    <td>9518</td>
+                    <td>6369</td>
+                    <td>01:32:50</td>
+                </tr>
+                <tr>
+                    <td>Google</td>
+                    <td>9518</td>
+                    <td>6369</td>
+                    <td>01:32:50</td>
+                </tr>
+                <tr>
+                    <td>Google</td>
+                    <td>9518</td>
+                    <td>6369</td>
+                    <td>01:32:50</td>
+                </tr>
+                <tr>
+                    <td>Google</td>
+                    <td>9518</td>
+                    <td>6369</td>
+                    <td>01:32:50</td>
+                </tr>
+                <tr>
+                    <td>Google</td>
+                    <td>9518</td>
+                    <td>6369</td>
+                    <td>01:32:50</td>
+                </tr>
+                <tr>
+                    <td>Google</td>
+                    <td>9518</td>
+                    <td>6369</td>
+                    <td>01:32:50</td>
+                </tr>
+                <tr>
+                    <td>Twitter</td>
+                    <td>7326</td>
+                    <td>10437</td>
+                    <td>00:51:22</td>
+                </tr>
+                <tr>
+                    <td>Amazon</td>
+                    <td>4162</td>
+                    <td>5327</td>
+                    <td>00:24:34</td>
+                </tr>
+            <tr>
+                    <td>LinkedIn</td>
+                    <td>3654</td>
+                    <td>2961</td>
+                    <td>00:12:10</td>
+                </tr>
+            <tr>
+                    <td>CodePen</td>
+                    <td>2002</td>
+                    <td>4135</td>
+                    <td>00:46:19</td>
+                </tr>
+            <tr>
+                    <td>GitHub</td>
+                    <td>4623</td>
+                    <td>3486</td>
+                    <td>00:31:52</td>
+                </tr>
+            </tbody> -->
+        </table>
+        
+    </div>
    
 
-	<script type="text/javascript" src="static/district.js"></script>
+    <script type="text/javascript" src="static/district.js"></script>
+	<script type="text/javascript" src="static/app.js"></script>
+    
     
 </body>
 </html>

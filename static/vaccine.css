@@ -38,6 +38,51 @@ input[type=submit] {
   left: 0;
   right: 0;
 }
+.table2{
+margin-top: 50px;
+padding: 15px;
+  border-radius: 20px;
+  background-color:#313673;}
+
+  .container3 th h1 {
+    font-weight: bold;
+    font-size: 1em;
+  text-align: left;
+  color: white
+  }
+  
+  .container3 td {
+    font-weight: normal;
+    font-size: 0.75em;
+    color: #A4A8CD ;
+    /* gap: 6px; */
+  /* -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+     -moz-box-shadow: 0 2px 2px -2px #0E1119;
+          box-shadow: 0 2px 2px -2px #0E1119; */
+  }
+  
+  .container3 {
+    text-align: left;
+    /* overflow-x: auto; */
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+  display: block;
+  padding: 0 0 10em 0;
+  border-spacing: 3em 0
+  
+  
+  }
+  
+  .container3 td, .container3 th {
+    padding-bottom: 2%;
+    padding-top: 2%;
+  padding-left:1.5%;  
+  }
+
+
+
+
 .autocomplete-items div {
   padding: 10px;
   cursor: pointer;
