@@ -37,8 +37,6 @@ def calcDist(lat,long):
 
 
 
-center = calcDist(10.053217879640254, 76.31975408889113)
-print(center)
 
 
 
@@ -55,6 +53,7 @@ print(center)
   
 # import modules
 from modules.mongo import connect
+
 
 app= Flask(__name__)
 
@@ -528,9 +527,33 @@ def center_list():
         return jsonify(data_center_vaccination)
 
 
-@app.route('/center')
+def reg_details(center):
+    reg = client.find({'center': center})
+    return reg
+
+@app.route('/center' , methods=('GET', 'POST'))
 def center_route():
-       return  render_template('district.html')
+        visible = 0
+        sel = 0
+        reg = []
+        details=[]
+        center_search=0
+        if request.method == 'POST':
+                center_search = request.form['center']
+                reg = client.find({'center': center_search})
+                print(reg.count(),flush=True)
+                if reg.count() == 0:
+                        sel = 1
+                else :
+                        sel = 0
+        for i in reg:
+                print(i['center'],flush = True)
+                details.append(i)
+                visible =1
+                
+        
+
+        return  render_template('district.html' , details=details , visible=visible , sel=sel , center = center_search)
 
 
 if __name__=='__main__':
