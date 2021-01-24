@@ -354,6 +354,13 @@ main{
   font-size: 10px;
 
 }
+.legend{
+  font-size: 15px;
+  color: #A4A8CD;
+  text-align: right;
+  margin-top: 20px;
+  margin-right: 50px;
+}
 
 .charts{
   margin-top: 20px !important;
