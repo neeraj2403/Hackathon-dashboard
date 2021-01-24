@@ -48,7 +48,7 @@ cd Hackathon-dashboard
 3. Run `python3 project.py` to start the server
 
 
-
+---
 
 
 ##### For  Linux/MacOS
@@ -60,6 +60,8 @@ cd Hackathon-dashboard
 3. Run `python project.py` to start the server
 
 
+
+---
 
 ### Images
 
