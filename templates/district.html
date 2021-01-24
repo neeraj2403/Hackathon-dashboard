@@ -72,20 +72,26 @@
             </div>
         </nav>
     </div>
+    <h1 class="main-heading">Vaccination Centers</h1>
+    <p class = "main-para">Center-wise details of the registered people.</p>
+    <div class="search">
     <form class = "form" autocomplete="off" action="/center" method="POST">
         <div class="autocomplete">
           <input id="myInput" type="text" name="center" placeholder="Select Center">
         </div>
-        <input type="submit">
+        <!-- <input type="submit"> -->
+        <button class = "button2" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
       </form>
-
+    </div>
 <h1></h1>
 {% if center %}
-      <h1 style="color: aliceblue;">{{ center }}</h1>
+      <h1 id="heading2">{{ center }}</h1>
       {% endif %}
 {% if visible %}
       
-      <div class="table2" style="overflow-x:scroll">
+      <div class="table2">
         <table class="container3" id = "table" >
             <thead>
                 
@@ -120,7 +126,7 @@
     {% endif %}
 
     {% if sel==1  %}
-     <h3 style="color: aliceblue;">No registration  yet</h3>
+     <h3 id = "heading1">No registrations yet!</h3>
      {% endif %}
    
 
