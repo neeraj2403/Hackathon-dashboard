@@ -38,6 +38,7 @@
     <script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.4/esri-leaflet-geocoder.js"></script> 
     <link rel="stylesheet" type="text/css" href="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.3/esri-leaflet-geocoder.css">
 <!--===============================================================================================-->
+<script src="../static/ContactFrom_v3/js/main.js"></script>
 
 </head>
 <body id = "body-pd">
@@ -96,7 +97,7 @@
 		<div class="divide">
 			<div class="wrap-contact3">
 				
-				<form class="contact3-form validate-form" action="/display" method="POST" >
+				<form class="contact3-form validate-form" action="/display" method="POST" name="myform" onsubmit="return validateForm()" >
 					<span class="contact3-form-title">
 						Covid 19 Vaccination Registration
 					</span>
@@ -104,12 +105,12 @@
 
 					
 
-					<div class="wrap-input3 validate-input" data-validate="Name is required">
+					<div class="wrap-input3">
 						<input class="input3" type="text" name="name" placeholder="Your Name">
 						<span class="focus-input3"></span>
 					</div>
 
-					<div class="wrap-input3 validate-input" data-validate = "Age is required">
+					<div class="wrap-input3">
 						<input class="input3" type="number" name="Age" placeholder="Your Age(Above 15)"">
 						<span class="focus-input3"></span>
 					</div>
@@ -132,7 +133,7 @@
 						</div>
 						<span class="focus-input3"></span>
 					</div>
-					<div class="wrap-input3 validate-input" data-validate = "State is required">
+					<div class="wrap-input3" >
 						<!-- <input class="input3" type="text" name="State" placeholder="State">
 						<span class="focus-input3"></span> -->
 						<select class="selection-2" id="exampleFormControlSelect1" name="State">
@@ -265,7 +266,6 @@
 
 	</script>
 <!--===============================================================================================-->
-	<script src="../static/ContactFrom_v3/js/main.js"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
@@ -333,5 +333,6 @@
 	  
 	//setTimeout(function(){$('.pointer').fadeOut('slow');},3400);
 	</script>
+
 </body>
 </html>
