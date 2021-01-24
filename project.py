@@ -82,7 +82,7 @@ with open('./Datasets/50plus_index') as s:
 # load phase 1, phase2 & phase 3
 
 # data
-with open('./Datasets/New Folder/phase1_india') as s:
+with open('./Datasets/phase1_india') as s:
         phase1_india_json = json.load(s)
 
 
@@ -90,59 +90,59 @@ with open('./Datasets/New Folder/phase1_india') as s:
 # phase 1 states
 
 state_0=[]
-with open('./Datasets/New Folder/state_0_ph1') as s:
+with open('./Datasets/state_0_ph1') as s:
         phase1_0_states = json.load(s)
         for i in phase1_0_states:
                 state_0.append( phase1_0_states[i])
 
 state_1=[]
-with open('./Datasets/New Folder/state_1_ph1') as s:
+with open('./Datasets/state_1_ph1') as s:
         phase1_1_states = json.load(s)
         for i in phase1_1_states:
                 state_1.append( phase1_1_states[i])
 
 state_2=[]
-with open('./Datasets/New Folder/state_2_ph1') as s:
+with open('./Datasets/state_2_ph1') as s:
         phase1_2_states = json.load(s)
         for i in phase1_2_states:
                 state_2.append( phase1_2_states[i])
 
 
 # phase 2
-with open('./Datasets/New Folder/phase2_state_50_60') as s:
+with open('./Datasets/phase2_state_50_60') as s:
         phase2_50_60_state_json = json.load(s)
-with open('./Datasets/New Folder/phase2_state_60_70') as s:
+with open('./Datasets/phase2_state_60_70') as s:
         phase2_60_70_state_json = json.load(s)
-with open('./Datasets/New Folder/phase2_state_70_80') as s:
+with open('./Datasets/phase2_state_70_80') as s:
         phase2_70_80_state_json = json.load(s)
-with open('./Datasets/New Folder/phase2_state_80') as s:
+with open('./Datasets/phase2_state_80') as s:
         phase2_80_state_json = json.load(s)
 
 
 # phase 3
-with open('./Datasets/New Folder/phase3_state_15_19') as s:
+with open('./Datasets/phase3_state_15_19') as s:
         phase3_state_json = json.load(s)
 
 
 # phase 1 state
-with open('./Datasets/New Folder/phase1_state') as s:
+with open('./Datasets/phase1_state') as s:
         phase1_state = json.load(s)
 
 # phase 2 state
-with open('./Datasets/New Folder/phase2_state_50_60') as s:
+with open('./Datasets/phase2_state_50_60') as s:
         phase2_state_50_60 = json.load(s)
 
-with open('./Datasets/New Folder/phase2_state_60_70') as s:
+with open('./Datasets/phase2_state_60_70') as s:
         phase2_state_60_70 = json.load(s)
 
-with open('./Datasets/New Folder/phase2_state_70_80') as s:
+with open('./Datasets/phase2_state_70_80') as s:
         phase2_state_70_80 = json.load(s)
 
-with open('./Datasets/New Folder/phase2_state_80') as s:
+with open('./Datasets/phase2_state_80') as s:
         phase2_state_80 = json.load(s)
 
 
-with open('./Datasets/New Folder/phase3_state_15_19') as s:
+with open('./Datasets/phase3_state_15_19') as s:
         phase3 = json.load(s)
 
 
