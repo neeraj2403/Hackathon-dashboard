@@ -475,7 +475,8 @@ def display():
                 return str(day)+("th" if 4<=day%100<=20 else {1:"st",2:"nd",3:"rd"}.get(day%10, "th"))
         day1 = ord(day)    
         center = ''  
-        center=calcDist(lat,lon)   
+        if state_sel == 'Kerala':
+                center=calcDist(lat,lon)   
 
 
         user = {
