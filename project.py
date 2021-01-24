@@ -411,7 +411,7 @@ def display():
                                 
 
             
-                if occ =='Other Jobs' or occ =='Students':
+                if occ =='Others' or occ =='Students':
                         if age > 80:
                                 for i in phase2_state_80:
                                         if i['State']==state_sel:
