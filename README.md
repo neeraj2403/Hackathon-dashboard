@@ -17,19 +17,28 @@
 #### Setup 
 
 ###### clone the repository
-```
+``
 git clone  https://github.com/neeraj2403/Hackathon-dashboard.git
-```
+``
 ###### move to the cloned Directory
-```
+``
 cd Hackathon-dashboard
-```
+``
 
 #### Steps
-1. Run `python3 -m venv venv` to create a virtual environment
-2. Activate `venv` by running `. venv/bin/activate`
-3. Run `pip3 install -r requirements.txt` to install packages
-5. Run `python3 project.py` to start the server
+##### For  Linux/MacOS
+
+1. Setup a virtual env
+2. Run `pip3 install -r requirements.txt` to install packages
+3. Run `python3 project.py` to start the server
+
+
+##### For  Linux/MacOS
+
+1. Setup a virtual env
+2. Run `pip install -r requirements.txt` to install packages
+3. Run `python project.py` to start the server
+
 
 
 
