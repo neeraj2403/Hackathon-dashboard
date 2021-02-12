@@ -1,1 +1,0 @@
-username,state_sel,age

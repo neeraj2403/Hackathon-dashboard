@@ -1,10 +1,10 @@
 
 import pymongo  
-
+import URI
 
 
 def connect():
-    client = pymongo.MongoClient('mongodb+srv://vaishnav:vaishnav@cluster0.ihtgz.mongodb.net/ey?retryWrites=true&w=majority')  
+    client = pymongo.MongoClient(URI.api_secret)  
     client = client.ey
     return client
 
