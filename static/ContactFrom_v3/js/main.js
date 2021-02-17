@@ -1,4 +1,59 @@
 
+// Initialize the map and assign it to a variable for later use
+var map = L.map('map', {
+  // Set latitude and longitude of the map center (required)
+  center: [10.8505, 76.2711],
+  // Set the initial zoom level, values 0-18, where 0 is most zoomed-out (required)
+  zoom: 5
+});
+
+console.log(map);
+L.control.scale().addTo(map);
+
+// Create a Tile Layer and add it to the map
+//var tiles = new L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png').addTo(map);
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+  minZoom: 4,
+  maxZoom: 10
+}).addTo(map);
+console.log(map);
+//(passiveSupported && (active || el == window.document || el == window.document.body || el == window)) ? el.addEventListener(name, fn, { passive: false, capture: bubble }) : el.addEventListener(name, fn, bubble || false); -->
+
+var searchControl = new L.esri.Controls.Geosearch().addTo(map);
+
+var results = new L.LayerGroup().addTo(map);
+let latGlobal = 0.0;
+let lonGlabal = 0.0;
+
+
+
+
+  searchControl.on('results', function(data){
+  let latInput =  document.getElementById('latInput')
+  let lonInput =  document.getElementById('lonInput')
+  results.clearLayers();
+  for (var i = data.results.length - 1; i >= 0; i--) {
+    results.addLayer(L.marker(data.results[i].latlng));
+    // console.log(data.results[i].latlng);
+    console.log(data.results[i].latlng)
+    let latx = data.results[i].latlng.lat;
+    let lonx = data.results[i].latlng.lng;
+    
+    
+    latInput.value = latx;
+    lonInput.value = lonx;
+    
+  }
+  
+  });
+  
+  //setTimeout(() => console.log(lat), 0);
+  
+//setTimeout(function(){$('.pointer').fadeOut('slow');},3400);
+
+
+
 (function ($) {
     "use strict";
 
@@ -31,67 +86,6 @@
         }
     });
         
-  
-    
-    /*==================================================================
-    [ Validate ]*/
-    // var name = $('.validate-input input[name="name"]');
-    // var Age = $('.validate-input input[name="Age"]');
-    // var occupation = $('.validate-input textarea[name="occupation"]');
-    // var state = $('.validate-input textarea[name="state"]');
-
-    
-
-    // $('.validate-form').on('submit',function(){
-    //     var check = true;
-    //     // $('.modal').modal('show',function(e){
-
-    //     //  e.preventDefault();
-
-    //     // });
-    //     //  e.preventDefault();
-    //     if($(name).val().trim() == ''){
-    //         showValidate(name);
-    //         check=false;
-    //     }
-
-
-    //     if($(Age).val().trim() == '') {
-    //         showValidate(Age);
-    //         check=false;
-    //     }
-
-    //     if($(occupation).val().trim() == ''){
-    //         showValidate(occupation);
-    //         check=false;
-    //     }
-    //     if($(state).val().trim() == ''){
-    //         showValidate(state);
-    //         check=false;
-    //     }
-
-    //     return check;
-    // });
-
-
-    // $('.validate-form .input3').each(function(){
-    //     $(this).focus(function(){
-    //        hideValidate(this);
-    //    });
-    // });
-
-    // function showValidate(input) {
-    //     var thisAlert = $(input).parent();
-
-    //     $(thisAlert).addClass('alert-validate');
-    // }
-
-    // function hideValidate(input) {
-    //     var thisAlert = $(input).parent();
-
-    //     $(thisAlert).removeClass('alert-validate');
-    // }
-    
     
     
 

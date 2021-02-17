@@ -5,23 +5,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
-<!--===============================================================================================-->
-	<!-- <link rel="icon" type="image/png" href="../static/ContactFrom_v3/images/icons/favicon.ico"/> -->
-<!--===============================================================================================-->
-	<!-- <link rel="stylesheet" type="text/css" href="../static/ContactFrom_v3/vendor/bootstrap/css/bootstrap.min.css"> -->
-<!--===============================================================================================-->
-	<!-- <link rel="stylesheet" type="text/css" href="../static/ContactFrom_v3/fonts/font-awesome-4.7.0/css/font-awesome.min.css"> -->
-<!--===============================================================================================-->
-	<!-- <link rel="stylesheet" type="text/css" href="../static/ContactFrom_v3/vendor/animate/animate.css"> -->
-<!--===============================================================================================-->
-	<!-- <link rel="stylesheet" type="text/css" href="../static/ContactFrom_v3/vendor/css-hamburgers/hamburgers.min.css"> -->
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../static/ContactFrom_v3/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../static/ContactFrom_v3/css/util.css">
 	<link rel="stylesheet" type="text/css" href="../static/ContactFrom_v3/css/main.css">
-	<link rel="stylesheet" href="../static/style.css">
+	<link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	
 	<link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
@@ -134,12 +122,10 @@
 						<span class="focus-input3"></span>
 					</div>
 					<div class="wrap-input3" >
-						<!-- <input class="input3" type="text" name="State" placeholder="State">
-						<span class="focus-input3"></span> -->
+						
 						<select class="selection-2" id="exampleFormControlSelect1" name="State">
 							{% if states %}
 							
-							<!-- <p class="card-text">States Covered</p> -->
 			
 							<option>Select State</option>
 							{% for i in states %}
@@ -180,27 +166,7 @@
 						<span class="focus-input3"></span>
 					</div>
 
-					<!-- <div class="wrap-input3 input3-select">
-						<div>
-							<select class="selection-2" name="budget">
-								<option>Budget</option>
-								<option>1500 $</option>
-								<option>2000 $</option>
-								<option>3000 $</option>
-							</select>
-						</div>
-						<span class="focus-input3"></span>
-					</div> -->
-
-					<!-- <div class="wrap-input3 validate-input" data-validate = "Message is required">
-						<textarea class="input3" name="message" placeholder="Your Message"></textarea>
-						<span class="focus-input3"></span>
-					</div> -->
-
-					<!-- <div class="container-contact3-form-btn">
-						<button class="contact3-form-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">
-							Submit
-						</button> -->
+					
 						<input type="text" style="display: none;" name="lat" id="latInput" size=12 value="">
 						<input type="text"  style="display: none;"name="lon" id="lonInput" size=12 value="">
 						
@@ -212,50 +178,24 @@
 						
 				</form>
 				
-				  <!-- <div id = "#modal" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" >
-					<div class="modal-dialog">
-					  <div class="modal-content">
-						<div class="modal-header">
-						  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-						  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						{% if day %}
-						<div class="modal-body">
-							{{ day }}
-						</div>
-						{% endif %}
-
-						
-						<div class="modal-footer">
-						  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
-						</div>
-					  </div>
-					</div>
-				  </div> -->
-				
-			
+				  
 			
 			</div>
 			<div class="map-div">
   			<div id="map"></div>
 			</div>
 		</div>
-	<!-- </div> -->
 
 
 	<div id="dropDownSelect1"></div>
-	<script type="text/javascript" src="static/app.js"></script>
+	<script type="text/javascript" src="static/js/app.js"></script>
 
 	<script src="../static/ContactFrom_v3/vendor/jquery/jquery-3.2.1.min.js"></script>
 
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 	
-<!--===============================================================================================-->
-<!--===============================================================================================-->
-	<!-- <script src="../static/ContactFrom_v3/vendor/bootstrap/js/popper.js"></script> -->
-	<!-- <script src="../static/ContactFrom_v3/vendor/bootstrap/js/bootstrap.min.js"></script> -->
-	<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script> -->
+
 <!--===============================================================================================-->
 	<script src="../static/ContactFrom_v3/vendor/select2/select2.min.js"></script>
 	<script>
@@ -280,58 +220,7 @@
 </script>
 
 <script>
-	// Initialize the map and assign it to a variable for later use
-	var map = L.map('map', {
-		// Set latitude and longitude of the map center (required)
-		center: [10.8505, 76.2711],
-		// Set the initial zoom level, values 0-18, where 0 is most zoomed-out (required)
-		zoom: 5
-	});
 	
-	console.log(map);
-	L.control.scale().addTo(map);
-	
-	// Create a Tile Layer and add it to the map
-	//var tiles = new L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png').addTo(map);
-	L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-		minZoom: 4,
-		maxZoom: 10
-	}).addTo(map);
-	console.log(map);
-	//(passiveSupported && (active || el == window.document || el == window.document.body || el == window)) ? el.addEventListener(name, fn, { passive: false, capture: bubble }) : el.addEventListener(name, fn, bubble || false); -->
-	
-	var searchControl = new L.esri.Controls.Geosearch().addTo(map);
-
-	var results = new L.LayerGroup().addTo(map);
-	let latGlobal = 0.0;
-	let lonGlabal = 0.0;
-
-
-	
-	
-	  searchControl.on('results', function(data){
-		let latInput =  document.getElementById('latInput')
-		let lonInput =  document.getElementById('lonInput')
-		results.clearLayers();
-		for (var i = data.results.length - 1; i >= 0; i--) {
-			results.addLayer(L.marker(data.results[i].latlng));
-			// console.log(data.results[i].latlng);
-			console.log(data.results[i].latlng)
-			let latx = data.results[i].latlng.lat;
-			let lonx = data.results[i].latlng.lng;
-			
-			
-			latInput.value = latx;
-			lonInput.value = lonx;
-		  
-		}
-		
-	  });
-	  
-		//setTimeout(() => console.log(lat), 0);
-	  
-	//setTimeout(function(){$('.pointer').fadeOut('slow');},3400);
 	</script>
 
 </body>
