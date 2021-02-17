@@ -552,8 +552,6 @@ def center_route():
                 details.append(i)
                 visible =1
                 
-        
-
         return  render_template('district.html' , details=details , visible=visible , sel=sel , center = center_search)
 
 
